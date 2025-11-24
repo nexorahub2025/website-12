@@ -14,10 +14,24 @@
 }
 
 /* Remove underline from button links */
-.btn-primary {
-  text-decoration: none !important;
+.btn-blue {
+  background-color: #007bff;
+  /* Blue */
   color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.3s ease;
 }
+
+.btn-blue:hover {
+  background-color: #0056b3;
+  /* Darker blue */
+}
+
 
 /* Hover animation for each course box */
 .course-card {
@@ -67,4 +81,9 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.btn-sm {
+  text-decoration: none !important;
 }

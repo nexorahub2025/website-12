@@ -71,9 +71,9 @@ export default function PythonFullStack() {
     const toggle = (i) => setOpenIndex(openIndex === i ? null : i);
 
     return (
-        <div className="pf-container">
+        <div id="bro" className="pf-container">
             {/* Hero */}
-            <section className="pf-hero">
+            <section id="pythontop" className="pf-hero">
                 <div className="pf-hero-inner">
                     <div className="pf-hero-left">
                         <h1>Python Full Stack Development</h1>
@@ -179,13 +179,22 @@ export default function PythonFullStack() {
             {/* Team / Instructor */}
             <section className="pf-section instructor">
                 <h2>Meet Your Trainers</h2>
+
                 <div className="team-grid">
                     <div className="team-card">
-                        <img src="/image/3.jpg" alt="Mukesh" />
+                        <div className="trainer-img-wrapper">
+                            <img src="/image/3.jpg" alt="Sowmika" className="trainer-img" />
+                        </div>
+
                         <h3>Sowmika</h3>
-                        <p>Senior Full Stack Trainer — 6+ years building production apps & mentoring 1000+ students.</p>
+                        <p>
+                            Senior Full Stack Trainer — 6+ years experience building production apps
+                            & mentoring 1000+ students.
+                        </p>
                     </div>
-                </div>            </section>
+                </div>
+            </section>
+
 
             {/* Reviews */}
             <section className="pf-section reviews">

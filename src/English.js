@@ -1,72 +1,72 @@
 import React, { useState } from "react";
 import "./CoursePage.css";
 
-export default function JavaFullStack() {
+export default function EnglishCommunication() {
     const [openIndex, setOpenIndex] = useState(null);
 
     const syllabus = [
         {
-            title: "Module 1 — Core Java Programming",
-            duration: "3 weeks",
-            items: [
-                "Java syntax, OOP principles, classes & objects",
-                "Inheritance, polymorphism, abstraction, interfaces",
-                "Exception handling, collections framework, generics",
-            ],
-        },
-        {
-            title: "Module 2 — Backend with Spring Boot",
-            duration: "4 weeks",
-            items: [
-                "Spring Boot project setup, REST API development",
-                "Dependency Injection, JPA & Hibernate ORM",
-                "MySQL integration, CRUD operations, validation",
-                "Security: JWT Auth, role-based access",
-            ],
-        },
-        {
-            title: "Module 3 — Frontend with React",
-            duration: "3 weeks",
-            items: [
-                "Modern HTML, CSS, responsive UI",
-                "React components, hooks, props & state",
-                "Integration with Java Spring Boot APIs",
-            ],
-        },
-        {
-            title: "Module 4 — DevOps, CI/CD & Deployment",
+            title: "Module 1 — Basic English Grammar",
             duration: "2 weeks",
             items: [
-                "Git, GitHub, branching workflows",
-                "Docker basics, container deployment",
-                "Deploy Java + React full stack app to AWS / Render",
+                "Parts of speech, tenses, sentence structure",
+                "Common grammatical mistakes",
+                "Active & passive voice, direct & indirect speech",
+            ],
+        },
+        {
+            title: "Module 2 — Spoken English & Fluency",
+            duration: "3 weeks",
+            items: [
+                "Pronunciation, accent training",
+                "Daily conversation practice",
+                "Public speaking, group discussions",
+                "Confidence building techniques",
+            ],
+        },
+        {
+            title: "Module 3 — Professional Communication",
+            duration: "2 weeks",
+            items: [
+                "Email writing, corporate communication",
+                "Presentation skills",
+                "Interview communication & HR questions",
+            ],
+        },
+        {
+            title: "Module 4 — Writing & Vocabulary Building",
+            duration: "2 weeks",
+            items: [
+                "Essay & paragraph writing",
+                "Vocabulary improvement techniques",
+                "Creative writing basics",
             ],
         },
     ];
 
     const projects = [
         {
-            name: "Employee Management System",
-            desc: "Admin login, employee CRUD, role-based access, MySQL integration.",
+            name: "Interview Practice Module",
+            desc: "Mock HR interview questions with spoken responses.",
         },
         {
-            name: "Online Course Selling Platform",
-            desc: "User login, course videos, payment flow demo, admin dashboard.",
+            name: "Email Writing Task",
+            desc: "Write professional emails, reports & proposals.",
         },
         {
-            name: "Hospital Appointment System",
-            desc: "Doctor/patient login, appointment booking, report uploads.",
+            name: "Public Speaking Recording",
+            desc: "Record & submit a 3-minute speech for evaluation.",
         },
         {
-            name: "E-Commerce Full Stack App",
-            desc: "Product catalog, cart, orders, backend admin CMS.",
+            name: "Conversation Practice Workbook",
+            desc: "Daily real-life English conversation practice tasks.",
         },
     ];
 
     const reviews = [
-        { name: "Karthik R", text: "Best Java Full Stack course with real backend projects." },
-        { name: "Harshita", text: "Spring Boot and React integration was taught clearly." },
-        { name: "Deepak", text: "Placement guidance was very useful. Recommended!" },
+        { name: "Aarav", text: "My speaking confidence improved a lot. Amazing course!" },
+        { name: "Sneha", text: "Grammar and fluency modules were easy to understand." },
+        { name: "Mahesh", text: "Great for interview preparation and communication." },
     ];
 
     const toggle = (i) => setOpenIndex(openIndex === i ? null : i);
@@ -77,15 +77,14 @@ export default function JavaFullStack() {
             <section className="pf-hero">
                 <div className="pf-hero-inner">
                     <div className="pf-hero-left">
-                        <h1>Java Full Stack Development</h1>
+                        <h1>English Communication Skills</h1>
                         <p className="pf-sub">
-                            Master Java, Spring Boot, React, MySQL & Deployment — Become an industry-ready
-                            Java Full Stack Developer with real-time projects.
+                            Improve grammar, fluency, writing & interview communication through structured lessons, practice tasks & feedback.
                         </p>
 
                         <div className="pf-cta-row">
                             <a
-                                href="https://docs.google.com/forms/d/your-google-form-id/viewform"
+                                href="https://forms.gle/peNrEn4xtz7Qx1bN6"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="btn-primary full"
@@ -97,16 +96,16 @@ export default function JavaFullStack() {
                         </div>
 
                         <div className="pf-highlights">
-                            <div><strong>Duration:</strong> 12–14 weeks</div>
+                            <div><strong>Duration:</strong> 6–8 weeks</div>
                             <div><strong>Level:</strong> Beginner → Advanced</div>
-                            <div><strong>Students:</strong> 800+ Enrolled</div>
+                            <div><strong>Students:</strong> 1200+ Enrolled</div>
                         </div>
                     </div>
 
                     <aside className="pf-aside">
                         <div className="pf-card sticky-card">
-                            <div className="price">₹8,999</div>
-                            <div className="small">One-time payment (EMI also available)</div>
+                            <div className="price">₹4,999</div>
+                            <div className="small">One-time payment</div>
                             <a
                                 href="https://forms.gle/peNrEn4xtz7Qx1bN6"
                                 target="_blank"
@@ -117,26 +116,26 @@ export default function JavaFullStack() {
                             </a>
                             <button className="btn-outline full">Download Syllabus</button>
                             <ul className="aside-features">
-                                <li>Live classes</li>
-                                <li>Hands-on Projects</li>
+                                <li>Live speaking sessions</li>
+                                <li>Assignments & Speaking Practice</li>
                                 <li>Certificate</li>
-                                <li>Placement Guidance</li>
+                                <li>Interview Preparation</li>
                             </ul>
                         </div>
                     </aside>
                 </div>
             </section>
 
-            {/* What you'll learn */}
+            {/* Learn */}
             <section className="pf-section learn" id="learn">
                 <h2>What you'll learn</h2>
                 <div className="learn-grid">
-                    <div className="learn-item">Strong command on Core Java</div>
-                    <div className="learn-item">Develop REST APIs using Spring Boot</div>
-                    <div className="learn-item">Work with MySQL & Hibernate ORM</div>
-                    <div className="learn-item">Build React-based frontend UI</div>
-                    <div className="learn-item">Integrate frontend with backend APIs</div>
-                    <div className="learn-item">Deploy full stack apps to cloud</div>
+                    <div className="learn-item">Speak confidently in English</div>
+                    <div className="learn-item">Improve grammar & vocabulary</div>
+                    <div className="learn-item">Write professional emails</div>
+                    <div className="learn-item">Prepare for interviews</div>
+                    <div className="learn-item">Improve pronunciation & fluency</div>
+                    <div className="learn-item">Develop public speaking skills</div>
                 </div>
             </section>
 
@@ -167,7 +166,7 @@ export default function JavaFullStack() {
 
             {/* Projects */}
             <section className="pf-section projects">
-                <h2>Real Projects You'll Build</h2>
+                <h2>Practical Projects You'll Do</h2>
                 <div className="projects-grid">
                     {projects.map((p, idx) => (
                         <div className="project-card" key={idx}>
@@ -177,9 +176,6 @@ export default function JavaFullStack() {
                     ))}
                 </div>
             </section>
-
-            {/* Instructors */}
-
 
             {/* Reviews */}
             <section className="pf-section reviews">

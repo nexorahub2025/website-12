@@ -184,26 +184,7 @@ export default function SSCExam() {
             </section>
 
             {/* Trainers */}
-            <section className="pf-section instructor">
-                <h2>Meet Your Trainers</h2>
-                <div className="team-grid">
-                    <div className="team-card">
-                        <img src="https://i.pravatar.cc/120?img=40" alt="Trainer" />
-                        <h3>Rakesh Sir</h3>
-                        <p>Quant Expert — 8+ years coaching SSC aspirants.</p>
-                    </div>
-                    <div className="team-card">
-                        <img src="https://i.pravatar.cc/120?img=42" alt="Trainer" />
-                        <h3>Swathi Ma'am</h3>
-                        <p>English Mentor — Specializes in grammar & comprehension.</p>
-                    </div>
-                    <div className="team-card">
-                        <img src="https://i.pravatar.cc/120?img=41" alt="Trainer" />
-                        <h3>Praveen Sir</h3>
-                        <p>GS Specialist — Polity, History & Current Affairs expert.</p>
-                    </div>
-                </div>
-            </section>
+
 
             {/* Reviews */}
             <section className="pf-section reviews">

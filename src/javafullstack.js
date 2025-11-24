@@ -93,7 +93,7 @@ export default function JavaFullStack() {
                                 Enroll Now
                             </a>
 
-                            <a href="#syllabus" className="btn-outline">View Syllabus</a>
+                            <a href="#syllabus" className="btn-outline top-syllabus-btn">View Syllabus</a>
                             <a className="btn-tertiary" href="#contact">Contact Us</a>
                         </div>
 

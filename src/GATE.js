@@ -1,72 +1,72 @@
 import React, { useState } from "react";
 import "./CoursePage.css";
 
-export default function JavaFullStack() {
+export default function GatePreparation() {
     const [openIndex, setOpenIndex] = useState(null);
 
     const syllabus = [
         {
-            title: "Module 1 — Core Java Programming",
+            title: "Module 1 — Engineering Mathematics",
             duration: "3 weeks",
             items: [
-                "Java syntax, OOP principles, classes & objects",
-                "Inheritance, polymorphism, abstraction, interfaces",
-                "Exception handling, collections framework, generics",
+                "Linear Algebra, Calculus, Differential equations",
+                "Probability, Statistics, Numerical Methods",
+                "Transforms: Laplace, Fourier",
             ],
         },
         {
-            title: "Module 2 — Backend with Spring Boot",
-            duration: "4 weeks",
-            items: [
-                "Spring Boot project setup, REST API development",
-                "Dependency Injection, JPA & Hibernate ORM",
-                "MySQL integration, CRUD operations, validation",
-                "Security: JWT Auth, role-based access",
-            ],
-        },
-        {
-            title: "Module 3 — Frontend with React",
-            duration: "3 weeks",
-            items: [
-                "Modern HTML, CSS, responsive UI",
-                "React components, hooks, props & state",
-                "Integration with Java Spring Boot APIs",
-            ],
-        },
-        {
-            title: "Module 4 — DevOps, CI/CD & Deployment",
+            title: "Module 2 — General Aptitude",
             duration: "2 weeks",
             items: [
-                "Git, GitHub, branching workflows",
-                "Docker basics, container deployment",
-                "Deploy Java + React full stack app to AWS / Render",
+                "Verbal Ability: Grammar, Comprehension, Vocabulary",
+                "Quantitative Aptitude: Arithmetic, Algebra, Data Interpretation",
+                "Reasoning & Analytical Skills",
+            ],
+        },
+        {
+            title: "Module 3 — Core Technical Subjects",
+            duration: "6–8 weeks",
+            items: [
+                "Subject-wise in-depth GATE syllabus coverage",
+                "PYQ analysis for last 20 years",
+                "Concept strengthening + problem solving",
+            ],
+        },
+        {
+            title: "Module 4 — Test Series & Revision",
+            duration: "3 weeks",
+            items: [
+                "Topic-wise tests",
+                "Full-length mock exams",
+                "Revision & time management techniques",
+                "GATE exam strategy & scoring tips",
             ],
         },
     ];
 
     const projects = [
         {
-            name: "Employee Management System",
-            desc: "Admin login, employee CRUD, role-based access, MySQL integration.",
+            name: "PYQ Analysis (Last 20 Years)",
+            desc: "Complete analysis of question patterns and frequently repeated topics.",
         },
         {
-            name: "Online Course Selling Platform",
-            desc: "User login, course videos, payment flow demo, admin dashboard.",
+            name: "Personal Performance Dashboard",
+            desc: "Track your mock test progress, accuracy, and time management.",
         },
         {
-            name: "Hospital Appointment System",
-            desc: "Doctor/patient login, appointment booking, report uploads.",
+            name: "GATE Mock Exam Simulation",
+            desc: "Practice in a real GATE-like exam environment.",
         },
         {
-            name: "E-Commerce Full Stack App",
-            desc: "Product catalog, cart, orders, backend admin CMS.",
+            name: "Subject Mastery Sheets",
+            desc: "Quick review sheets for faster revision before exam day.",
         },
     ];
 
     const reviews = [
-        { name: "Karthik R", text: "Best Java Full Stack course with real backend projects." },
-        { name: "Harshita", text: "Spring Boot and React integration was taught clearly." },
-        { name: "Deepak", text: "Placement guidance was very useful. Recommended!" },
+        { name: "Rahul M", text: "Best GATE coaching with structured syllabus. Mock tests helped a lot." },
+        { name: "Sneha P", text: "Concept clarity and doubt solving were excellent." },
+        { name: "Anil Kumar", text: "I improved my score by 40+ marks because of their PYQ practice." },
     ];
 
     const toggle = (i) => setOpenIndex(openIndex === i ? null : i);
@@ -77,10 +77,10 @@ export default function JavaFullStack() {
             <section className="pf-hero">
                 <div className="pf-hero-inner">
                     <div className="pf-hero-left">
-                        <h1>Java Full Stack Development</h1>
+                        <h1>GATE Preparation Course</h1>
                         <p className="pf-sub">
-                            Master Java, Spring Boot, React, MySQL & Deployment — Become an industry-ready
-                            Java Full Stack Developer with real-time projects.
+                            Complete GATE coaching with Engineering Mathematics, Aptitude, Core Subjects,
+                            PYQs, Mock Tests & Full-Length Test Series.
                         </p>
 
                         <div className="pf-cta-row">
@@ -97,16 +97,16 @@ export default function JavaFullStack() {
                         </div>
 
                         <div className="pf-highlights">
-                            <div><strong>Duration:</strong> 12–14 weeks</div>
+                            <div><strong>Duration:</strong> 12–16 weeks</div>
                             <div><strong>Level:</strong> Beginner → Advanced</div>
-                            <div><strong>Students:</strong> 800+ Enrolled</div>
+                            <div><strong>Students:</strong> 1500+ Trained</div>
                         </div>
                     </div>
 
                     <aside className="pf-aside">
                         <div className="pf-card sticky-card">
-                            <div className="price">₹8,999</div>
-                            <div className="small">One-time payment (EMI also available)</div>
+                            <div className="price">₹6,499</div>
+                            <div className="small">One-time payment (EMI available)</div>
                             <a
                                 href="https://forms.gle/peNrEn4xtz7Qx1bN6"
                                 target="_blank"
@@ -117,10 +117,10 @@ export default function JavaFullStack() {
                             </a>
                             <button className="btn-outline full">Download Syllabus</button>
                             <ul className="aside-features">
-                                <li>Live classes</li>
-                                <li>Hands-on Projects</li>
-                                <li>Certificate</li>
-                                <li>Placement Guidance</li>
+                                <li>Live Classes</li>
+                                <li>Mock Tests</li>
+                                <li>PYQ Practice</li>
+                                <li>Revision Sessions</li>
                             </ul>
                         </div>
                     </aside>
@@ -131,12 +131,12 @@ export default function JavaFullStack() {
             <section className="pf-section learn" id="learn">
                 <h2>What you'll learn</h2>
                 <div className="learn-grid">
-                    <div className="learn-item">Strong command on Core Java</div>
-                    <div className="learn-item">Develop REST APIs using Spring Boot</div>
-                    <div className="learn-item">Work with MySQL & Hibernate ORM</div>
-                    <div className="learn-item">Build React-based frontend UI</div>
-                    <div className="learn-item">Integrate frontend with backend APIs</div>
-                    <div className="learn-item">Deploy full stack apps to cloud</div>
+                    <div className="learn-item">Strong command on GATE Mathematics</div>
+                    <div className="learn-item">Master General Aptitude</div>
+                    <div className="learn-item">Complete Technical Subject Coverage</div>
+                    <div className="learn-item">PYQ Solving Techniques</div>
+                    <div className="learn-item">Mock Exam Practice</div>
+                    <div className="learn-item">Time & Accuracy Management</div>
                 </div>
             </section>
 
@@ -165,9 +165,9 @@ export default function JavaFullStack() {
                 </div>
             </section>
 
-            {/* Projects */}
+            {/* Projects / Practicals */}
             <section className="pf-section projects">
-                <h2>Real Projects You'll Build</h2>
+                <h2>Practice & Mock Modules</h2>
                 <div className="projects-grid">
                     {projects.map((p, idx) => (
                         <div className="project-card" key={idx}>
@@ -177,9 +177,6 @@ export default function JavaFullStack() {
                     ))}
                 </div>
             </section>
-
-            {/* Instructors */}
-
 
             {/* Reviews */}
             <section className="pf-section reviews">

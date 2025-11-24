@@ -1,75 +1,85 @@
 import React, { useState } from "react";
 import "./CoursePage.css";
 
-export default function JEE() {
+export default function AWS() {
     const [openIndex, setOpenIndex] = useState(null);
 
     const syllabus = [
         {
-            title: "Module 1 — Physics (JEE Mains + Advanced)",
-            duration: "4 weeks",
-            items: [
-                "Kinematics, Newton's Laws, Work & Energy",
-                "Rotational Motion, Gravitation, Fluids",
-                "Electrostatics, Magnetism, Current Electricity",
-                "Optics, Modern Physics, Heat & Thermodynamics",
-            ],
-        },
-        {
-            title: "Module 2 — Chemistry (Physical, Organic, Inorganic)",
-            duration: "4 weeks",
-            items: [
-                "Mole Concept, Thermodynamics, Chemical Kinetics",
-                "Organic basics, GOC, Hydrocarbons",
-                "Periodic Table, Chemical Bonding",
-                "Coordination compounds, Electrochemistry",
-            ],
-        },
-        {
-            title: "Module 3 — Mathematics (JEE Mains + Advanced)",
-            duration: "4 weeks",
-            items: [
-                "Algebra, Quadratic & Polynomial Equations",
-                "Coordinate Geometry: Lines, Circles, Conics",
-                "Calculus: Limits, Derivatives, Integration",
-                "Vectors, Matrices, Probability",
-            ],
-        },
-        {
-            title: "Module 4 — JEE Strategy, Mock Tests & Analysis",
+            title: "Module 1 — AWS Cloud Basics",
             duration: "2 weeks",
             items: [
-                "Exam strategy for Mains + Advanced",
-                "Previous year questions discussion",
-                "Full-length mock tests",
-                "Speed & accuracy improvement techniques",
+                "Introduction to Cloud Computing",
+                "AWS Global Infrastructure & Regions",
+                "IAM Users, Groups, Roles, Policies",
+                "EC2, S3, VPC Overview",
+            ],
+        },
+        {
+            title: "Module 2 — AWS Compute, Storage & Networking",
+            duration: "3 weeks",
+            items: [
+                "Launching & Managing EC2 Instances",
+                "EBS, EFS, S3 Deep Concepts",
+                "VPC, Subnets, Route Tables, Internet Gateway",
+                "Load Balancer & Auto Scaling",
+            ],
+        },
+        {
+            title: "Module 3 — Databases & Security",
+            duration: "2 weeks",
+            items: [
+                "RDS, DynamoDB, Aurora",
+                "AWS KMS, Shield, WAF",
+                "CloudWatch, CloudTrail, SNS, SQS",
+                "Backup, Monitoring & Logging",
+            ],
+        },
+        {
+            title: "Module 4 — AWS DevOps Essentials",
+            duration: "3 weeks",
+            items: [
+                "CI/CD using CodeCommit, CodeBuild, CodeDeploy",
+                "Serverless — Lambda, API Gateway",
+                "Docker & ECS/ECR",
+                "Deploying a Full Application",
+            ],
+        },
+        {
+            title: "Module 5 — Exam Strategy & Hands-On Projects",
+            duration: "2 weeks",
+            items: [
+                "AWS Cloud Practitioner Exam Strategy",
+                "AWS Solutions Architect Associate Tips",
+                "Full Practice Tests",
+                "Real-World AWS Deployments",
             ],
         },
     ];
 
     const projects = [
         {
-            name: "100+ Mock Tests Portal",
-            desc: "Access topic-wise and full-length JEE mock tests with analytics.",
+            name: "AWS EC2 Deployment Project",
+            desc: "Deploy a real application using EC2, Security Groups & Load Balancer.",
         },
         {
-            name: "Formula Handbook",
-            desc: "Physics, Chemistry & Maths quick revision notes for high scoring.",
+            name: "S3 + CloudFront Hosting",
+            desc: "Host a static website with global delivery using S3 & CloudFront.",
         },
         {
-            name: "Doubt Solving System",
-            desc: "Students can ask questions and get solutions in real-time.",
+            name: "Serverless Application",
+            desc: "Build API using Lambda + API Gateway + DynamoDB.",
         },
         {
-            name: "JEE Rank Predictor",
-            desc: "AI-based score vs rank prediction tool.",
+            name: "CI/CD Automation",
+            desc: "Implement CI/CD pipeline using CodePipeline & CodeDeploy.",
         },
     ];
 
     const reviews = [
-        { name: "Rohan", text: "The mock tests and analysis helped me boost my rank." },
-        { name: "Ananya", text: "Great teachers and simple explanations for tough concepts." },
-        { name: "Vikram", text: "Best course for JEE preparation at affordable price!" },
+        { name: "Arjun", text: "Best AWS course with real hands-on projects!" },
+        { name: "Sneha", text: "Helped me crack AWS Cloud Practitioner easily." },
+        { name: "Mahesh", text: "Great explanations and practical exercises." },
     ];
 
     const toggle = (i) => setOpenIndex(openIndex === i ? null : i);
@@ -80,9 +90,9 @@ export default function JEE() {
             <section className="pf-hero">
                 <div className="pf-hero-inner">
                     <div className="pf-hero-left">
-                        <h1>JEE Coaching — Mains & Advanced</h1>
+                        <h1>AWS Cloud & DevOps Training</h1>
                         <p className="pf-sub">
-                            Master Physics, Chemistry & Mathematics for JEE Mains and Advanced with India's top-level structured preparation.
+                            Master AWS Cloud Practitioner + Solutions Architect + DevOps Essentials with real hands-on projects.
                         </p>
 
                         <div className="pf-cta-row">
@@ -99,15 +109,15 @@ export default function JEE() {
                         </div>
 
                         <div className="pf-highlights">
-                            <div><strong>Duration:</strong> 12–14 weeks</div>
+                            <div><strong>Duration:</strong> 12 weeks</div>
                             <div><strong>Level:</strong> Beginner → Advanced</div>
-                            <div><strong>Students:</strong> 1500+ Enrolled</div>
+                            <div><strong>Students:</strong> 2000+ Trained</div>
                         </div>
                     </div>
 
                     <aside className="pf-aside">
                         <div className="pf-card sticky-card">
-                            <div className="price">₹7,999</div>
+                            <div className="price">₹8,499</div>
                             <div className="small">One-time payment (EMI available)</div>
                             <a
                                 href="https://forms.gle/peNrEn4xtz7Qx1bN6"
@@ -119,10 +129,10 @@ export default function JEE() {
                             </a>
                             <button className="btn-outline full">Download Syllabus</button>
                             <ul className="aside-features">
-                                <li>Live classes</li>
-                                <li>Mock Tests & Analysis</li>
-                                <li>Handwritten Notes</li>
-                                <li>24x7 Doubt Solving</li>
+                                <li>Live Classes</li>
+                                <li>Hands-on AWS Labs</li>
+                                <li>Certification Guidance</li>
+                                <li>24x7 Doubt Support</li>
                             </ul>
                         </div>
                     </aside>
@@ -133,11 +143,11 @@ export default function JEE() {
             <section className="pf-section learn" id="learn">
                 <h2>What you'll learn</h2>
                 <div className="learn-grid">
-                    <div className="learn-item">Strong foundation in PCM concepts</div>
-                    <div className="learn-item">Solve complex JEE-level problems</div>
-                    <div className="learn-item">Master time management in exams</div>
-                    <div className="learn-item">Attempt full mock tests with analysis</div>
-                    <div className="learn-item">Build exam confidence</div>
+                    <div className="learn-item">AWS Cloud Foundations</div>
+                    <div className="learn-item">Deploy apps using EC2, S3, VPC</div>
+                    <div className="learn-item">Hands-on DevOps tools</div>
+                    <div className="learn-item">Serverless & CI/CD</div>
+                    <div className="learn-item">Clear AWS Certification Exams</div>
                 </div>
             </section>
 
@@ -168,7 +178,7 @@ export default function JEE() {
 
             {/* Projects */}
             <section className="pf-section projects">
-                <h2>Resources & Tools You'll Use</h2>
+                <h2>Hands-On AWS Projects</h2>
                 <div className="projects-grid">
                     {projects.map((p, idx) => (
                         <div className="project-card" key={idx}>
@@ -178,8 +188,6 @@ export default function JEE() {
                     ))}
                 </div>
             </section>
-
-            {/* Instructors */}
 
             {/* Reviews */}
             <section className="pf-section reviews">
