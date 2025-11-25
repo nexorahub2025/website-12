@@ -609,6 +609,315 @@
         line-height: 1.5;
     }
 
+    .btn-sm {
+        padding: 12px 20px;
+        /* bigger button */
+        font-size: 16px;
+        /* larger text */
+        border-radius: 8px;
+        /* smoother shape */
+        text-decoration: none !important;
+        display: inline-block;
+    }
+
+    .btn-outline {
+        padding: 12px 20px;
+        font-size: 16px;
+        border-radius: 8px;
+        text-decoration: none !important;
+        display: inline-block;
+    }
+
+
+
+    /* STATS SECTION */
+    .stats-section {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+        padding: 20px 10px;
+        margin-top: 10px;
+    }
+
+    .stat-box {
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 12px 6px;
+        text-align: center;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        transition: 0.3s ease;
+    }
+
+    .stat-box:hover {
+        transform: translateY(-4px);
+    }
+
+    .stat-box h2 {
+        font-size: 22px;
+        font-weight: 700;
+        color: #007bff;
+        /* change color if needed */
+        margin: 5px 0;
+    }
+
+    .stat-box p {
+        font-size: 13px;
+        color: #444;
+    }
+
+    /* MOBILE RESPONSIVE */
+    @media (max-width: 768px) {
+        .stats-section {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .stat-box h2 {
+            font-size: 20px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .stats-section {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* ================================
+   COURSE SECTIONS (FREE + TRENDING)
+================================ */
+
+    /* Section Wrapper */
+    .course-section {
+        width: 100%;
+        margin: 60px auto;
+        padding: 0 20px;
+    }
+
+    /* Section Title */
+    .section-title {
+        font-size: 28px;
+        font-weight: 800;
+        text-align: center;
+        margin-bottom: 35px;
+        color: #111;
+    }
+
+    /* Grid - Responsive Premium */
+    .course-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+        gap: 30px;
+        justify-content: center;
+    }
+
+    /* Course Card */
+    .course-card {
+        background: #fff;
+        padding: 28px;
+        border-radius: 22px;
+        min-height: 260px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.10);
+        transition: all 0.3s ease;
+        border: 1px solid #f0f0f0;
+    }
+
+    /* Hover Effect */
+    .course-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Course Title */
+    .course-card h3 {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 12px;
+    }
+
+    /* Description */
+    .course-card p {
+        font-size: 15px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+    }
+
+    /* Buttons (Explore / Start Learning) */
+    .btn-sm {
+        padding: 10px 18px;
+        background: #0066ff;
+        color: #fff !important;
+        text-align: center;
+        border-radius: 12px;
+        font-size: 15px;
+        font-weight: 600;
+        width: fit-content;
+    }
+
+    /* Trending Badge */
+    .trend-tag {
+        background: #ff5722;
+        padding: 5px 12px;
+        border-radius: 14px;
+        font-size: 13px;
+        font-weight: 600;
+        color: #fff;
+        width: fit-content;
+        margin-bottom: 10px;
+    }
+
+    /* Custom Colors for Different Tags */
+    .trending .trend-tag {
+        background: #ff4b2b;
+        /* 🔥 Trending */
+    }
+
+    .trending:nth-child(2) .trend-tag {
+        background: #8e24aa;
+        /* ✨ New */
+    }
+
+    .trending:nth-child(3) .trend-tag {
+        background: #007b83;
+        /* ⭐ Popular */
+    }
+
+    /* =========================================
+   🌟 PROFESSIONAL TRAINER SECTION
+========================================= */
+
+    .nh-trainers {
+        padding: 70px 20px;
+        background: #f9fbff;
+    }
+
+    .nh-container {
+        max-width: 1150px;
+        margin: auto;
+    }
+
+    .nh-trainers .section-title {
+        text-align: center;
+        font-size: 34px;
+        font-weight: 800;
+        margin-bottom: 40px;
+        color: #111;
+    }
+
+    /* Slider styling */
+    .trainers-slider {
+        padding: 20px 0;
+    }
+
+    /* 🌟 TRAINER CARD */
+    .trainer-card {
+        background: #fff;
+        border-radius: 22px;
+        padding: 25px;
+        text-align: center;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.09);
+        border: 1px solid #e6e6e6;
+        width: 300px !important;
+        margin: auto;
+        transition: 0.3s ease-in-out;
+    }
+
+    /* Hover */
+    .trainer-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Trainer Image */
+    .trainer-card img {
+        width: 120px;
+        height: 120px;
+        border-radius: 100%;
+        object-fit: cover;
+        margin-bottom: 15px;
+        border: 4px solid #2563eb;
+    }
+
+    /* Trainer Name */
+    .trainer-card h4 {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 6px;
+        color: #111;
+    }
+
+    /* Role */
+    .trainer-card .muted {
+        color: #6d6d6d;
+        font-size: 15px;
+    }
+
+    /* Mobile Fix - same card size */
+    @media (max-width: 768px) {
+        .trainer-card {
+            width: 85% !important;
+            padding: 30px 20px;
+        }
+
+        .trainer-card img {
+            width: 110px;
+            height: 110px;
+        }
+    }
+
+    .additional-section {
+        padding: 60px 0;
+        background-color: #f9f9f9;
+    }
+
+    .additional-section .nh-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 24px;
+    }
+
+    .feature-card {
+        background: #fff;
+        border-radius: 16px;
+        padding: 24px;
+        text-align: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .feature-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    .feature-card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 12px;
+        margin-bottom: 16px;
+    }
+
+    .feature-card h3 {
+        font-size: 1.25rem;
+        margin-bottom: 12px;
+    }
+
+    .feature-card p {
+        font-size: 0.95rem;
+        color: #555;
+        margin-bottom: 16px;
+    }
+
+    .feature-card .btn-sm {
+        padding: 8px 16px;
+        border-radius: 8px;
+    }
+
+
     /* Mobile fixes */
     /* =====================================================
     🌟 ULTRA CLEAN MOBILE VERSION
@@ -621,6 +930,17 @@
             padding: 0 !important;
             overflow-x: hidden !important;
         }
+
+        /* FORCE APPLY BUTTON STYLE */
+        .btn-sm,
+        .btn-outline {
+            padding: 12px 22px !important;
+            font-size: 16px !important;
+            border-radius: 8px !important;
+            display: inline-block !important;
+            text-decoration: none !important;
+        }
+
 
         /* HERO */
         .pf-hero {
@@ -779,4 +1099,82 @@
         .accordion-body li {
             margin-bottom: 8px;
         }
+    }
+
+    /* HOME PAGE SEARCH BAR */
+    .home-search-box {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        padding: 15px;
+        margin-top: 10px;
+    }
+
+    .home-search-input {
+        width: 70%;
+        padding: 12px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+        outline: none;
+    }
+
+    .home-search-btn {
+        padding: 12px 16px;
+        border-radius: 8px;
+        background: #007bff;
+        color: white;
+        font-size: 15px;
+        border: none;
+        cursor: pointer;
+    }
+
+    /* -------- HOME PAGE BUTTON FIX -------- */
+
+    .btn-sm {
+        padding: 12px 20px;
+        /* bigger button */
+        font-size: 16px;
+        /* larger text */
+        border-radius: 8px;
+        /* smoother shape */
+        text-decoration: none !important;
+        display: inline-block;
+    }
+
+    .btn-outline {
+        padding: 12px 20px;
+        font-size: 16px;
+        border-radius: 8px;
+        text-decoration: none !important;
+        display: inline-block;
+    }
+
+    /* FIX TRAINER CARD SIZE — MOBILE ONLY */
+    .team-card {
+        width: 100% !important;
+        min-height: 260px !important;
+        /* you can increase/decrease */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px;
+    }
+
+    .team-card img {
+        width: 90px !important;
+        height: 90px !important;
+        object-fit: cover;
+    }
+
+    .team-card h3 {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .team-card p {
+        text-align: center;
+        font-size: 0.9rem;
     }
