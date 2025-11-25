@@ -24,7 +24,7 @@ import JEE from "./JEE";
 
 /* Dummy data */
 const mainCourses = [
-  "Python Stack",
+  "Python  Full Stack",
   "Java Full Stack",
   "AWS (Amazon Web Services)",
   "Artificial Intelligence (AI)",
@@ -119,10 +119,15 @@ function Home() {
       </header>
 
       <main>
+
         {/* HERO */}
         <section id="home" className="nh-hero">
+
+
           <div className="nh-container hero-inner">
+
             <div className="hero-left">
+
               <h1>Empowering Learning with <span className="accent">NexoraHub</span></h1>
               <p className="lead">Hands-on courses, expert trainers, and project-based learning — everything to make you job-ready.</p>
               <div className="hero-actions">
@@ -137,6 +142,8 @@ function Home() {
                   </a>          </div>                <button className="btn-ghost" onClick={() => document.querySelector("#courses").scrollIntoView({ behavior: "smooth" })}>Learn More</button>
               </div>
             </div>
+
+
             <div className="hero-right">
               <div className="hero-card">
                 <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop" alt="students learning" />
@@ -170,14 +177,14 @@ function Home() {
                   <p className="course-mini">Comprehensive curriculum with projects & certification.</p>
 
                   <div className="course-actions">
-                    {c === "Python Stack" && (
+                    {c === "Python  Full Stack" && (
                       <>
                         <Link
                           to="/python"
                           className="btn-sm"
                           onClick={() => window.scrollTo(0, 0)}
                         >
-                          View
+                          Explore
                         </Link>
                         <Link to="https://forms.gle/peNrEn4xtz7Qx1bN6" className="btn-outline">Enroll</Link>
                       </>
@@ -190,7 +197,7 @@ function Home() {
                           className="btn-sm"
                           onClick={() => window.scrollTo(0, 0)}
                         >
-                          Syllabus
+                          Explore
                         </Link>
                         <Link
                           to="https://forms.gle/peNrEn4xtz7Qx1bN6"
@@ -208,8 +215,7 @@ function Home() {
                           to="/aws"
                           className="btn-sm"
                           onClick={() => window.scrollTo(0, 0)}
-                        >
-                          Syllabus
+                        > Explore
                         </Link>
                         <Link
                           to="https://forms.gle/peNrEn4xtz7Qx1bN6"
@@ -228,7 +234,7 @@ function Home() {
                           className="btn-sm"
                           onClick={() => window.scrollTo(0, 0)}
                         >
-                          Syllabus
+                          Explore
                         </Link>
                         <Link
                           to="https://forms.gle/peNrEn4xtz7Qx1bN6"
@@ -247,7 +253,7 @@ function Home() {
                           className="btn-sm"
                           onClick={() => window.scrollTo(0, 0)}
                         >
-                          Syllabus
+                          Explore
                         </Link>
                         <Link
                           to="https://forms.gle/peNrEn4xtz7Qx1bN6"
@@ -266,7 +272,7 @@ function Home() {
                           className="btn-sm"
                           onClick={() => window.scrollTo(0, 0)}
                         >
-                          Syllabus
+                          Explore
                         </Link>
                         <Link
                           to="https://forms.gle/peNrEn4xtz7Qx1bN6"
@@ -319,7 +325,7 @@ function Home() {
                           className="btn-sm"
                           onClick={() => window.scrollTo(0, 0)}
                         >
-                          Syllabus
+                          Explore
                         </Link>
 
                         <Link
@@ -339,7 +345,7 @@ function Home() {
                           className="btn-sm"
                           onClick={() => window.scrollTo(0, 0)}
                         >
-                          Syllabus
+                          Explore
                         </Link>
 
                         <Link
@@ -359,7 +365,7 @@ function Home() {
                           className="btn-sm"
                           onClick={() => window.scrollTo(0, 0)}
                         >
-                          Syllabus
+                          Explore
                         </Link>
 
                         <Link
@@ -379,7 +385,7 @@ function Home() {
                           className="btn-sm"
                           onClick={() => window.scrollTo(0, 0)}
                         >
-                          Syllabus
+                          Explore
                         </Link>
 
                         <Link
@@ -399,7 +405,7 @@ function Home() {
                           className="btn-sm"
                           onClick={() => window.scrollTo(0, 0)}
                         >
-                          Syllabus
+                          Explore
                         </Link>
 
                         <Link
@@ -419,7 +425,7 @@ function Home() {
                           className="btn-sm"
                           onClick={() => window.scrollTo(0, 0)}
                         >
-                          Syllabus
+                          Explore
                         </Link>
 
                         <Link
@@ -438,7 +444,96 @@ function Home() {
               ))}
             </div>
           </div>
+          <section className="course-section">
+            <h2 className="section-title">Free Courses</h2>
+            <div className="course-grid">
+
+              <div className="course-card">
+                <h3>Python Basics – Free</h3>
+                <p>Beginner friendly Python foundation course.</p>
+                <Link to="https://forms.gle/kxXhWvznKYJStLdk6" className="btn-sm">Start Learning</Link>
+              </div>
+
+              <div className="course-card">
+                <h3>HTML & CSS Basics</h3>
+                <p>Learn to build your first webpage in simple steps.</p>
+                <Link to="https://forms.gle/kxXhWvznKYJStLdk6" className="btn-sm">Start Learning</Link>
+              </div>
+
+              <div className="course-card">
+                <h3>Aptitude Quick Revision</h3>
+                <p>Master all aptitude basics for placements & exams.</p>
+                <Link to="https://forms.gle/kxXhWvznKYJStLdk6" className="btn-sm">Start Learning</Link>
+              </div>
+
+            </div>
+          </section>
+          <section className="course-section">
+            <h2 className="section-title">Trending Courses</h2>
+            <div className="course-grid">
+
+              <div className="course-card trending">
+                <span className="trend-tag">🔥 Trending</span>
+                <h3>Artificial Intelligence</h3>
+                <p>AI tools, ML, Deep Learning & real-world projects.</p>
+                <Link
+                  to="/ai"
+                  className="btn-sm"
+                  onClick={() => window.scrollTo(0, 0)}
+                >
+                  Explore
+                </Link>          </div>
+
+              <div className="course-card trending">
+                <span className="trend-tag">✨ New</span>
+                <h3>Cloud & AWS Training</h3>
+                <p>Learn AWS Services, deployment, Lambda & S3.</p>
+                <Link
+                  to="/aws"
+                  className="btn-sm"
+                  onClick={() => window.scrollTo(0, 0)}
+                >
+                  Explore
+                </Link>             </div>
+
+              <div className="course-card trending">
+                <span className="trend-tag">⭐ Popular</span>
+                <h3>Data Science Mastery</h3>
+                <p>Python, Pandas, ML, Visualization & datasets.</p>
+                <Link
+                  to="/datascience"
+                  className="btn-sm"
+                  onClick={() => window.scrollTo(0, 0)}
+                >
+                  Explore
+                </Link>              </div>
+
+            </div>
+          </section>
+
+
         </section>
+        <div className="stats-section">
+          <div className="stat-box">
+            <h2>1200+</h2>
+            <p>Students Enrolled</p>
+          </div>
+
+          <div className="stat-box">
+            <h2>350+</h2>
+            <p>Students Placed</p>
+          </div>
+
+          <div className="stat-box">
+            <h2>18+</h2>
+            <p>Courses Offered</p>
+          </div>
+
+          <div className="stat-box">
+            <h2>4.9★</h2>
+            <p>Google Rating</p>
+          </div>
+        </div>
 
         {/* TRAINERS */}
         <section id="trainers" className="nh-trainers">
