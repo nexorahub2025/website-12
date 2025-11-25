@@ -174,7 +174,7 @@ function Home() {
                       <>
                         {/* Learn More → Goes to /python and scrolls top */}
                         <button
-                          className="btn-blue"
+                          className="btn-sm"
                           onClick={() => {
                             window.location.href = "/python";
                             setTimeout(() => {
@@ -200,7 +200,7 @@ function Home() {
                     {c === "Java Full Stack" && (
                       <>
                         <button
-                          className="btn-blue"
+                          className="btn-sm"
                           onClick={() => {
                             window.location.href = "/java";
                             setTimeout(() => {
@@ -222,7 +222,7 @@ function Home() {
                       <>
                         {/* Learn More → Goes to /aws and scrolls top */}
                         <button
-                          className="btn-blue"
+                          className="btn-sm"
                           onClick={() => {
                             window.location.href = "/aws";
                             setTimeout(() => {
@@ -237,7 +237,7 @@ function Home() {
                         <a
                           href="https://forms.gle/peNrEn4xtz7Qx1bN6"
                           target="_blank"
-                          className="btn-outline"
+                          className="btn-sm"
                         >
                           Enroll
                         </a>
@@ -251,7 +251,7 @@ function Home() {
                       <>
                         {/* Learn More → Goes to /ai and scrolls top */}
                         <button
-                          className="btn-blue"
+                          className="btn-sm"
                           onClick={() => {
                             window.location.href = "/ai";
                             setTimeout(() => {
@@ -266,7 +266,7 @@ function Home() {
                         <a
                           href="https://forms.gle/peNrEn4xtz7Qx1bN6"
                           target="_blank"
-                          className="btn-outline"
+                          className="btn-sm"
                         >
                           Enroll
                         </a>
@@ -277,7 +277,7 @@ function Home() {
                       <>
                         {/* Learn More → Goes to /datascience and scrolls top */}
                         <button
-                          className="btn-blue"
+                          className="btn-sm"
                           onClick={() => {
                             window.location.href = "/datascience";
                             setTimeout(() => {
@@ -304,7 +304,7 @@ function Home() {
                       <>
                         {/* Learn More → Goes to /aptitude and scrolls top */}
                         <button
-                          className="btn-blue"
+                          className="btn-sm"
                           onClick={() => {
                             window.location.href = "/aptitude";
                             setTimeout(() => {
@@ -329,7 +329,7 @@ function Home() {
                       <>
                         {/* Learn More → Goes to /english and scrolls top */}
                         <button
-                          className="btn-blue"
+                          className="btn-sm"
                           onClick={() => {
                             window.location.href = "/english";
                             setTimeout(() => {
