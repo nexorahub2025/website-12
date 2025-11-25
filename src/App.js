@@ -170,17 +170,12 @@ function Home() {
                   <p className="course-mini">Comprehensive curriculum with projects & certification.</p>
 
                   <div className="course-actions">
-                    {c === "Python Stack" && (
+                   {c === "Python Stack" && (
                       <>
-                        {/* Learn More → Goes to /python and scrolls top */}
-                        <button
-                          className="btn-sm"
-                          onClick={() => {
-                            window.location.href = "/python";
-                            setTimeout(() => {
-                              window.scrollTo({ top: 0, behavior: "smooth" });
-                            }, 200);
-                          }}
+                        <Link to="/python" className="btn-sm">Syllabus</Link>
+                        <Link to="https://forms.gle/peNrEn4xtz7Qx1bN6" className="btn-outline">Enroll</Link>
+                      </>
+                    )}
                         >
                           Learn More
                         </button>
