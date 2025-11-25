@@ -43,7 +43,7 @@ const competitiveCourses = [
 ];
 
 const trainers = [
-  { name: "Vamsi ", role: "Aptitude and Reasoning", img: "/image/1.jpg  " },
+  { name: "Vamsi ", role: "Apitude and Reasoning", img: "/image/1.jpg  " },
   { name: "Sowmika ", role: "Python Trainer", img: "/image/3.jpg  " },
   { name: "Purnasrinivas ", role: "AI Trainer", img: "/image/2.jpg  " },
 ];
@@ -126,15 +126,8 @@ function Home() {
               <h1>Empowering Learning with <span className="accent">NexoraHub</span></h1>
               <p className="lead">Hands-on courses, expert trainers, and project-based learning — everything to make you job-ready.</p>
               <div className="hero-actions">
-                <div className="header-cta">
-                  <a
-                    href="https://forms.gle/peNrEn4xtz7Qx1bN6"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-primary full"
-                  >
-                    Enroll Now
-                  </a>          </div>                <button className="btn-ghost" onClick={() => document.querySelector("#courses").scrollIntoView({ behavior: "smooth" })}>Learn More</button>
+                <button className="btn-primary" onClick={() => navigate("/syllabus")}>Enroll Now</button>
+                <button className="btn-ghost" onClick={() => document.querySelector("#courses").scrollIntoView({ behavior: "smooth" })}>Learn More</button>
               </div>
             </div>
             <div className="hero-right">
@@ -170,183 +163,54 @@ function Home() {
                   <p className="course-mini">Comprehensive curriculum with projects & certification.</p>
 
                   <div className="course-actions">
-                   {c === "Python Stack" && (
+                    {c === "Python Stack" && (
                       <>
                         <Link to="/python" className="btn-sm">Syllabus</Link>
                         <Link to="https://forms.gle/peNrEn4xtz7Qx1bN6" className="btn-outline">Enroll</Link>
                       </>
                     )}
-                        >
-                          Learn More
-                        </button>
-
-                        {/* Enroll Button */}
-                        <a
-                          href="https://forms.gle/peNrEn4xtz7Qx1bN6"
-                          target="_blank"
-                          className="btn-outline"
-                        >
-                          Enroll
-                        </a>
-                      </>
-                    )}
-
 
                     {c === "Java Full Stack" && (
                       <>
-                        <button
-                          className="btn-sm"
-                          onClick={() => {
-                            window.location.href = "/java";
-                            setTimeout(() => {
-                              window.scrollTo({ top: 0, behavior: "smooth" });
-                            }, 200);
-                          }}
-                        >
-                          Learn More
-                        </button>
-                        <a href="https://forms.gle/peNrEn4xtz7Qx1bN6"
-                          target="_blank"
-                          className="btn-outline"
-                        >
-                          Enroll
-                        </a>
+                        <Link to="/java" className="btn-sm">Syllabus</Link>
+                        <Link to="https://forms.gle/peNrEn4xtz7Qx1bN6" className="btn-outline">Enroll</Link>
                       </>
                     )}
+
                     {c === "AWS (Amazon Web Services)" && (
                       <>
-                        {/* Learn More → Goes to /aws and scrolls top */}
-                        <button
-                          className="btn-sm"
-                          onClick={() => {
-                            window.location.href = "/aws";
-                            setTimeout(() => {
-                              window.scrollTo({ top: 0, behavior: "smooth" });
-                            }, 200);
-                          }}
-                        >
-                          Learn More
-                        </button>
-
-                        {/* Enroll Button */}
-                        <a
-                          href="https://forms.gle/peNrEn4xtz7Qx1bN6"
-                          target="_blank"
-                          className="btn-sm"
-                        >
-                          Enroll
-                        </a>
+                        <Link to="/aws" className="btn-sm">Syllabus</Link>
+                        <Link to="https://forms.gle/peNrEn4xtz7Qx1bN6" className="btn-outline">Enroll</Link>
                       </>
                     )}
-
-
-
 
                     {c === "Artificial Intelligence (AI)" && (
                       <>
-                        {/* Learn More → Goes to /ai and scrolls top */}
-                        <button
-                          className="btn-sm"
-                          onClick={() => {
-                            window.location.href = "/ai";
-                            setTimeout(() => {
-                              window.scrollTo({ top: 0, behavior: "smooth" });
-                            }, 200);
-                          }}
-                        >
-                          Learn More
-                        </button>
-
-                        {/* Enroll Button */}
-                        <a
-                          href="https://forms.gle/peNrEn4xtz7Qx1bN6"
-                          target="_blank"
-                          className="btn-sm"
-                        >
-                          Enroll
-                        </a>
+                        <Link to="/ai" className="btn-sm">Syllabus</Link>
+                        <Link to="https://forms.gle/peNrEn4xtz7Qx1bN6" className="btn-outline">Enroll</Link>
                       </>
                     )}
 
                     {c === "Data Science" && (
                       <>
-                        {/* Learn More → Goes to /datascience and scrolls top */}
-                        <button
-                          className="btn-sm"
-                          onClick={() => {
-                            window.location.href = "/datascience";
-                            setTimeout(() => {
-                              window.scrollTo({ top: 0, behavior: "smooth" });
-                            }, 200);
-                          }}
-                        >
-                          Learn More
-                        </button>
-
-                        {/* Enroll Button */}
-                        <a
-                          href="https://forms.gle/peNrEn4xtz7Qx1bN6"
-                          target="_blank"
-                          className="btn-outline"
-                        >
-                          Enroll
-                        </a>
+                        <Link to="/datascience" className="btn-sm">Syllabus</Link>
+                        <Link to="https://forms.gle/peNrEn4xtz7Qx1bN6" className="btn-outline">Enroll</Link>
                       </>
                     )}
-
 
                     {c === "Aptitude & Reasoning" && (
                       <>
-                        {/* Learn More → Goes to /aptitude and scrolls top */}
-                        <button
-                          className="btn-sm"
-                          onClick={() => {
-                            window.location.href = "/aptitude";
-                            setTimeout(() => {
-                              window.scrollTo({ top: 0, behavior: "smooth" });
-                            }, 200);
-                          }}
-                        >
-                          Learn More
-                        </button>
-
-                        {/* Enroll Button */}
-                        <a
-                          href="https://forms.gle/peNrEn4xtz7Qx1bN6"
-                          target="_blank"
-                          className="btn-outline"
-                        >
-                          Enroll
-                        </a>
+                        <Link to="/aptitude" className="btn-sm">Syllabus</Link>
+                        <Link to="https://forms.gle/peNrEn4xtz7Qx1bN6" className="btn-outline">Enroll</Link>
                       </>
                     )}
+
                     {c === "English Communication" && (
                       <>
-                        {/* Learn More → Goes to /english and scrolls top */}
-                        <button
-                          className="btn-sm"
-                          onClick={() => {
-                            window.location.href = "/english";
-                            setTimeout(() => {
-                              window.scrollTo({ top: 0, behavior: "smooth" });
-                            }, 200);
-                          }}
-                        >
-                          Learn More
-                        </button>
-
-                        {/* Enroll Button */}
-                        <a
-                          href="https://forms.gle/peNrEn4xtz7Qx1bN6"
-                          target="_blank"
-                          className="btn-outline"
-                        >
-                          Enroll
-                        </a>
+                        <Link to="/english" className="btn-sm">Syllabus</Link>
+                        <Link to="https://forms.gle/peNrEn4xtz7Qx1bN6" className="btn-outline">Enroll</Link>
                       </>
                     )}
-
-
                   </div>
                 </div>
               ))}
@@ -362,136 +226,45 @@ function Home() {
                   <div className="course-actions">
                     {c === "GATE Preparation" && (
                       <>
-                        <button
-                          className="btn-blue"
-                          onClick={() => {
-                            window.location.href = "/gate";
-                            setTimeout(() => window.scrollTo({ top: 0, behavior: "smooth" }), 200);
-                          }}
-                        >
-                          Learn More
-                        </button>
-
-                        <a
-                          href="https://forms.gle/peNrEn4xtz7Qx1bN6"
-                          target="_blank"
-                          className="btn-outline"
-                        >
-                          Enroll
-                        </a>
+                        <Link to="/gate" className="btn-sm">Syllabus</Link>
+                        <Link to="https://forms.gle/peNrEn4xtz7Qx1bN6" className="btn-outline">Enroll</Link>
                       </>
                     )}
 
                     {c === "TCS NQT" && (
                       <>
-                        <button
-                          className="btn-blue"
-                          onClick={() => {
-                            window.location.href = "/tcs";
-                            setTimeout(() => window.scrollTo({ top: 0, behavior: "smooth" }), 200);
-                          }}
-                        >
-                          Learn More
-                        </button>
-
-                        <a
-                          href="https://forms.gle/peNrEn4xtz7Qx1bN6"
-                          target="_blank"
-                          className="btn-outline"
-                        >
-                          Enroll
-                        </a>
+                        <Link to="/tcs" className="btn-sm">Syllabus</Link>
+                        <Link to="https://forms.gle/peNrEn4xtz7Qx1bN6" className="btn-outline">Enroll</Link>
                       </>
                     )}
 
                     {c === "NEET" && (
                       <>
-                        <button
-                          className="btn-blue"
-                          onClick={() => {
-                            window.location.href = "/neet";
-                            setTimeout(() => window.scrollTo({ top: 0, behavior: "smooth" }), 200);
-                          }}
-                        >
-                          Learn More
-                        </button>
-
-                        <a
-                          href="https://forms.gle/peNrEn4xtz7Qx1bN6"
-                          target="_blank"
-                          className="btn-outline"
-                        >
-                          Enroll
-                        </a>
+                        <Link to="/neet" className="btn-sm">Syllabus</Link>
+                        <Link to="https://forms.gle/peNrEn4xtz7Qx1bN6" className="btn-outline">Enroll</Link>
                       </>
                     )}
 
                     {c === "Bank Exam Preparation" && (
                       <>
-                        <button
-                          className="btn-blue"
-                          onClick={() => {
-                            window.location.href = "/bank";
-                            setTimeout(() => window.scrollTo({ top: 0, behavior: "smooth" }), 200);
-                          }}
-                        >
-                          Learn More
-                        </button>
-
-                        <a
-                          href="https://forms.gle/peNrEn4xtz7Qx1bN6"
-                          target="_blank"
-                          className="btn-outline"
-                        >
-                          Enroll
-                        </a>
+                        <Link to="/bank" className="btn-sm">Syllabus</Link>
+                        <Link to="https://forms.gle/peNrEn4xtz7Qx1bN6" className="btn-outline">Enroll</Link>
                       </>
                     )}
 
                     {c === "SSC Exam Training" && (
                       <>
-                        <button
-                          className="btn-blue"
-                          onClick={() => {
-                            window.location.href = "/ssc";
-                            setTimeout(() => window.scrollTo({ top: 0, behavior: "smooth" }), 200);
-                          }}
-                        >
-                          Learn More
-                        </button>
-
-                        <a
-                          href="https://forms.gle/peNrEn4xtz7Qx1bN6"
-                          target="_blank"
-                          className="btn-outline"
-                        >
-                          Enroll
-                        </a>
+                        <Link to="/ssc" className="btn-sm">Syllabus</Link>
+                        <Link to="https://forms.gle/peNrEn4xtz7Qx1bN6" className="btn-outline">Enroll</Link>
                       </>
                     )}
 
                     {c === "JEE Mains/Advanced" && (
                       <>
-                        <button
-                          className="btn-blue"
-                          onClick={() => {
-                            window.location.href = "/jee";
-                            setTimeout(() => window.scrollTo({ top: 0, behavior: "smooth" }), 200);
-                          }}
-                        >
-                          Learn More
-                        </button>
-
-                        <a
-                          href="https://forms.gle/peNrEn4xtz7Qx1bN6"
-                          target="_blank"
-                          className="btn-outline"
-                        >
-                          Enroll
-                        </a>
+                        <Link to="/jee" className="btn-sm">Syllabus</Link>
+                        <Link to="https://forms.gle/peNrEn4xtz7Qx1bN6" className="btn-outline">Enroll</Link>
                       </>
                     )}
-
                   </div>
                 </div>
               ))}
