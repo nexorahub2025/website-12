@@ -3,10 +3,10 @@ import "./CoursePage.css";
 
 export default function BankExam() {
     const [openIndex, setOpenIndex] = useState(null);
+    const [menuOpen, setMenuOpen] = useState(false);
 
-    // ------------------------------
-    // SYLLABUS
-    // ------------------------------
+    const toggle = (i) => setOpenIndex(openIndex === i ? null : i);
+
     const syllabus = [
         {
             title: "Module 1 — Quantitative Aptitude",
@@ -15,7 +15,7 @@ export default function BankExam() {
                 "Number system, Simplification, Approximation",
                 "Arithmetic: Profit & Loss, Time & Work, Time & Distance",
                 "Data Interpretation, Quadratic Equations",
-                "Bank PO-level Advanced Maths Practice"
+                "Bank PO-level Advanced Maths Practice",
             ],
         },
         {
@@ -25,7 +25,7 @@ export default function BankExam() {
                 "Puzzles (Box, Floor, Scheduling)",
                 "Blood relations, Directions, Coding-Decoding",
                 "Syllogisms, Seating Arrangements",
-                "Prelims + Mains Reasoning Practice Sets"
+                "Prelims + Mains Reasoning Practice Sets",
             ],
         },
         {
@@ -35,7 +35,7 @@ export default function BankExam() {
                 "Reading Comprehension",
                 "Error detection, Para jumbles",
                 "Vocabulary, Cloze test",
-                "Grammar mastery with shortcuts"
+                "Grammar mastery with shortcuts",
             ],
         },
         {
@@ -45,68 +45,66 @@ export default function BankExam() {
                 "Current Affairs (Banking + Economy)",
                 "Static GK — RBI, SEBI, NABARD",
                 "Full-length Prelims & Mains mock tests",
-                "Interview preparation"
+                "Interview preparation",
             ],
         },
     ];
 
-    // ------------------------------
-    // PROJECTS / PRACTICE
-    // ------------------------------
     const projects = [
-        {
-            name: "30 Full-Length Mock Exams",
-            desc: "IBPS PO, Clerk, SBI PO, RRB exams formatted practice."
-        },
-        {
-            name: "Daily Topic-Wise Tests",
-            desc: "Quant, Reasoning, English, Banking Awareness."
-        },
-        {
-            name: "Speed Improvement Dashboard",
-            desc: "Track speed, accuracy & weak areas."
-        },
-        {
-            name: "Interview Practice Module",
-            desc: "HR questions, Banking domain questions, mock interviews."
-        },
+        { name: "30 Full-Length Mock Exams", desc: "IBPS PO, Clerk, SBI PO, RRB exams formatted practice." },
+        { name: "Daily Topic-Wise Tests", desc: "Quant, Reasoning, English, Banking Awareness." },
+        { name: "Speed Improvement Dashboard", desc: "Track speed, accuracy & weak areas." },
+        { name: "Interview Practice Module", desc: "HR questions, Banking domain questions, mock interviews." },
     ];
 
-    // ------------------------------
-    // STUDENT REVIEWS
-    // ------------------------------
     const reviews = [
         { name: "Vamsi", text: "Excellent faculty! The mock tests helped me clear IBPS Prelims." },
         { name: "Sravani", text: "Reasoning shortcuts were amazing. Best bank coaching experience!" },
         { name: "Arjun", text: "Daily quizzes & doubt clearing sessions were very helpful." },
     ];
 
-    const toggle = (i) => setOpenIndex(openIndex === i ? null : i);
-
     return (
         <div className="pf-container">
 
-            {/* Hero Section */}
+            {/* ⭐ UNIVERSAL HEADER ⭐ */}
+            <header className="top-header">
+                <div className="brand">
+                    <div className="logo">N</div>
+                    <div className="brand-text">
+                        <div className="brand-name">NexoraHub</div>
+                        <div className="brand-tag">Learn. Grow. Excel.</div>
+                    </div>
+                </div>
+
+                <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+                    ☰
+                </div>
+
+                <nav className={`nh-nav ${menuOpen ? "active" : ""}`}>
+                    <a href="/">Home</a>
+                    <a href="/#courses">Courses</a>
+                    <a href="/#services">Services</a>
+                    <a href="/#trainers">Trainers</a>
+                    <a href="/#contact">Contact</a>
+                </nav>
+            </header>
+
+            {/* HERO SECTION */}
             <section className="pf-hero">
                 <div className="pf-hero-inner">
                     <div className="pf-hero-left">
                         <h1>Bank Exam Coaching (IBPS, SBI, RRB)</h1>
                         <p className="pf-sub">
                             Crack IBPS PO, Clerk, RRB, and SBI Exams with our structured training program,
-                            mocks, and daily practice tests designed for beginners & advanced learners.
+                            mocks, and daily practice tests.
                         </p>
 
                         <div className="pf-cta-row">
-                            <a
-                                href="https://forms.gle/peNrEn4xtz7Qx1bN6"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="btn-primary full"
-                            >
+                            <a href="https://forms.gle/peNrEn4xtz7Qx1bN6" target="_blank" rel="noopener noreferrer" className="btn-primary full">
                                 Enroll Now
                             </a>
                             <a href="#syllabus" className="btn-outline">View Syllabus</a>
-                            <a className="btn-tertiary" href="#contact">Contact Us</a>
+                            <a href="#contact" className="btn-tertiary">Contact Us</a>
                         </div>
 
                         <div className="pf-highlights">
@@ -116,17 +114,12 @@ export default function BankExam() {
                         </div>
                     </div>
 
-                    {/* Aside Card */}
+                    {/* PRICE CARD */}
                     <aside className="pf-aside">
                         <div className="pf-card sticky-card">
                             <div className="price">₹5,999</div>
                             <div className="small">One-time payment (EMI available)</div>
-                            <a
-                                href="https://forms.gle/peNrEn4xtz7Qx1bN6"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="btn-primary full"
-                            >
+                            <a href="https://forms.gle/peNrEn4xtz7Qx1bN6" target="_blank" rel="noopener noreferrer" className="btn-primary full">
                                 Enroll Now
                             </a>
                             <button className="btn-outline full">Download Syllabus</button>
@@ -141,8 +134,8 @@ export default function BankExam() {
                 </div>
             </section>
 
-            {/* What You'll Learn */}
-            <section className="pf-section learn" id="learn">
+            {/* WHAT YOU'LL LEARN */}
+            <section className="pf-section learn">
                 <h2>What you'll learn</h2>
                 <div className="learn-grid">
                     <div className="learn-item">Quantitative Aptitude</div>
@@ -154,10 +147,9 @@ export default function BankExam() {
                 </div>
             </section>
 
-            {/* Syllabus */}
+            {/* SYLLABUS */}
             <section className="pf-section" id="syllabus">
                 <h2>Detailed Curriculum</h2>
-
                 <div className="accordion-wrap">
                     {syllabus.map((m, i) => (
                         <div key={i} className={`accordion ${openIndex === i ? "open" : ""}`}>
@@ -171,7 +163,7 @@ export default function BankExam() {
 
                             <div className="accordion-body">
                                 <ul>
-                                    {m.items.map((topic, t) => <li key={t}>{topic}</li>)}
+                                    {m.items.map((t, k) => <li key={k}>{t}</li>)}
                                 </ul>
                             </div>
                         </div>
@@ -179,12 +171,12 @@ export default function BankExam() {
                 </div>
             </section>
 
-            {/* Projects / Practice Section */}
+            {/* PROJECTS */}
             <section className="pf-section projects">
                 <h2>Practice & Mock Tests</h2>
                 <div className="projects-grid">
-                    {projects.map((p, idx) => (
-                        <div className="project-card" key={idx}>
+                    {projects.map((p, i) => (
+                        <div className="project-card" key={i}>
                             <div className="project-title">{p.name}</div>
                             <div className="project-desc">{p.desc}</div>
                         </div>
@@ -192,10 +184,7 @@ export default function BankExam() {
                 </div>
             </section>
 
-            {/* Trainers */}
-
-
-            {/* Reviews */}
+            {/* REVIEWS */}
             <section className="pf-section reviews">
                 <h2>Student Reviews</h2>
                 <div className="reviews-row">
@@ -208,7 +197,7 @@ export default function BankExam() {
                 </div>
             </section>
 
-            {/* Contact */}
+            {/* CONTACT */}
             <section className="pf-section contact" id="contact">
                 <h2>Contact / Enroll</h2>
                 <p>Have questions? Call or WhatsApp us — we're here to help!</p>
@@ -218,8 +207,14 @@ export default function BankExam() {
                 </div>
             </section>
 
-            <footer className="pf-footer">
-                © {new Date().getFullYear()} NexoraHub — All rights reserved.
+            <footer className="site-footer">
+                <p>© 2025 Skill Tree Academy / NexoraHub</p>
+
+                <div className="footer-legal">
+                    <a href="/public/privacy.pdf" target="_blank">Privacy Policy</a>
+                    <a href="/public/Terms.pdf" target="_blank">Terms & Conditions</a>
+                    <a href="/public/refund.pdf" target="_blank">Refund Policy</a>
+                </div>
             </footer>
         </div>
     );
