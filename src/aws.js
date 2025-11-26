@@ -3,6 +3,7 @@ import "./CoursePage.css";
 
 export default function AWS() {
     const [openIndex, setOpenIndex] = useState(null);
+    const [menuOpen, setMenuOpen] = useState(false);
 
     const syllabus = [
         {
@@ -58,22 +59,10 @@ export default function AWS() {
     ];
 
     const projects = [
-        {
-            name: "AWS EC2 Deployment Project",
-            desc: "Deploy a real application using EC2, Security Groups & Load Balancer.",
-        },
-        {
-            name: "S3 + CloudFront Hosting",
-            desc: "Host a static website with global delivery using S3 & CloudFront.",
-        },
-        {
-            name: "Serverless Application",
-            desc: "Build API using Lambda + API Gateway + DynamoDB.",
-        },
-        {
-            name: "CI/CD Automation",
-            desc: "Implement CI/CD pipeline using CodePipeline & CodeDeploy.",
-        },
+        { name: "AWS EC2 Deployment Project", desc: "Deploy a real application using EC2, Security Groups & Load Balancer." },
+        { name: "S3 + CloudFront Hosting", desc: "Host a static website with global delivery using S3 & CloudFront." },
+        { name: "Serverless Application", desc: "Build API using Lambda + API Gateway + DynamoDB." },
+        { name: "CI/CD Automation", desc: "Implement CI/CD pipeline using CodePipeline & CodeDeploy." },
     ];
 
     const reviews = [
@@ -83,27 +72,42 @@ export default function AWS() {
     ];
 
     const toggle = (i) => setOpenIndex(openIndex === i ? null : i);
+    const toggleMenu = () => setMenuOpen(!menuOpen);
 
     return (
         <div className="pf-container">
-            {/* Hero */}
-            <section className="pf-hero">
+            {/* ================= NAVBAR ================= */}
+            <header className="top-header">
+                <div className="brand">
+                    <div className="logo">A</div>
+                    <div className="brand-text">
+                        <div className="brand-name">AWS Cloud & DevOps</div>
+                        <div className="brand-tag">Learn, Deploy & Automate</div>
+                    </div>
+                </div>
+
+                <div className="hamburger" onClick={toggleMenu}>☰</div>
+
+                <nav className={`nh-nav ${menuOpen ? "active" : ""}`}>
+                    <a href="#home">Home</a>
+                    <a href="#syllabus">Syllabus</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#reviews">Reviews</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </header>
+
+            {/* ================= HERO ================= */}
+            <section className="pf-hero" id="home">
                 <div className="pf-hero-inner">
                     <div className="pf-hero-left">
                         <h1>AWS Cloud & DevOps Training</h1>
                         <p className="pf-sub">
-                            Master AWS Cloud Practitioner + Solutions Architect + DevOps Essentials with real hands-on projects.
+                            Master AWS Cloud Practitioner, Solutions Architect & DevOps Essentials with real hands-on projects.
                         </p>
 
                         <div className="pf-cta-row">
-                            <a
-                                href="https://forms.gle/peNrEn4xtz7Qx1bN6"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="btn-primary full"
-                            >
-                                Enroll Now
-                            </a>
+                            <a href="https://forms.gle/peNrEn4xtz7Qx1bN6" target="_blank" rel="noopener noreferrer" className="btn-primary full">Enroll Now</a>
                             <a href="#syllabus" className="btn-outline">View Syllabus</a>
                             <a className="btn-tertiary" href="#contact">Contact Us</a>
                         </div>
@@ -111,22 +115,15 @@ export default function AWS() {
                         <div className="pf-highlights">
                             <div><strong>Duration:</strong> 12 weeks</div>
                             <div><strong>Level:</strong> Beginner → Advanced</div>
-                            <div><strong>Students:</strong> 2000+ Trained</div>
+                            <div><strong>Students:</strong> 2+ Trained</div>
                         </div>
                     </div>
 
                     <aside className="pf-aside">
                         <div className="pf-card sticky-card">
-                            <div className="price">₹8,499</div>
+                            <div className="price">₹5,499</div>
                             <div className="small">One-time payment (EMI available)</div>
-                            <a
-                                href="https://forms.gle/peNrEn4xtz7Qx1bN6"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="btn-primary full"
-                            >
-                                Enroll Now
-                            </a>
+                            <a href="https://forms.gle/peNrEn4xtz7Qx1bN6" target="_blank" rel="noopener noreferrer" className="btn-primary full">Enroll Now</a>
                             <button className="btn-outline full">Download Syllabus</button>
                             <ul className="aside-features">
                                 <li>Live Classes</li>
@@ -139,36 +136,36 @@ export default function AWS() {
                 </div>
             </section>
 
-            {/* Learn */}
+            {/* ================= WHAT YOU LEARN ================= */}
             <section className="pf-section learn" id="learn">
                 <h2>What you'll learn</h2>
                 <div className="learn-grid">
                     <div className="learn-item">AWS Cloud Foundations</div>
                     <div className="learn-item">Deploy apps using EC2, S3, VPC</div>
-                    <div className="learn-item">Hands-on DevOps tools</div>
+                    <div className="learn-item">Hands-on DevOps Tools</div>
                     <div className="learn-item">Serverless & CI/CD</div>
-                    <div className="learn-item">Clear AWS Certification Exams</div>
+                    <div className="learn-item">AWS Certification Preparation</div>
                 </div>
             </section>
 
-            {/* Syllabus */}
+            {/* ================= SYLLABUS ================= */}
             <section className="pf-section" id="syllabus">
                 <h2>Detailed Curriculum</h2>
-
                 <div className="accordion-wrap">
-                    {syllabus.map((m, i) => (
+                    {syllabus.map((module, i) => (
                         <div key={i} className={`accordion ${openIndex === i ? "open" : ""}`}>
                             <button className="accordion-head" onClick={() => toggle(i)}>
                                 <div>
-                                    <h3>{m.title}</h3>
-                                    <div className="muted">{m.duration}</div>
+                                    <h3>{module.title}</h3>
+                                    <div className="muted">{module.duration}</div>
                                 </div>
                                 <div className="accordion-icon">{openIndex === i ? "−" : "+"}</div>
                             </button>
-
                             <div className="accordion-body">
                                 <ul>
-                                    {m.items.map((topic, t) => <li key={t}>{topic}</li>)}
+                                    {module.items.map((item, idx) => (
+                                        <li key={idx}>{item}</li>
+                                    ))}
                                 </ul>
                             </div>
                         </div>
@@ -176,8 +173,8 @@ export default function AWS() {
                 </div>
             </section>
 
-            {/* Projects */}
-            <section className="pf-section projects">
+            {/* ================= PROJECTS ================= */}
+            <section className="pf-section projects" id="projects">
                 <h2>Hands-On AWS Projects</h2>
                 <div className="projects-grid">
                     {projects.map((p, idx) => (
@@ -189,8 +186,8 @@ export default function AWS() {
                 </div>
             </section>
 
-            {/* Reviews */}
-            <section className="pf-section reviews">
+            {/* ================= REVIEWS ================= */}
+            <section className="pf-section reviews" id="reviews">
                 <h2>Student Reviews</h2>
                 <div className="reviews-row">
                     {reviews.map((r, i) => (
@@ -202,7 +199,7 @@ export default function AWS() {
                 </div>
             </section>
 
-            {/* Contact */}
+            {/* ================= CONTACT ================= */}
             <section className="pf-section contact" id="contact">
                 <h2>Contact / Enroll</h2>
                 <p>Have questions? Call or WhatsApp us — we're here to help!</p>
@@ -212,8 +209,14 @@ export default function AWS() {
                 </div>
             </section>
 
-            <footer className="pf-footer">
-                © {new Date().getFullYear()} NexoraHub — All rights reserved.
+            <footer className="site-footer">
+                <p>© 2025 Skill Tree Academy / NexoraHub</p>
+
+                <div className="footer-legal">
+                    <a href="/public/privacy.pdf" target="_blank">Privacy Policy</a>
+                    <a href="/public/Terms.pdf" target="_blank">Terms & Conditions</a>
+                    <a href="/public/refund.pdf" target="_blank">Refund Policy</a>
+                </div>
             </footer>
         </div>
     );
