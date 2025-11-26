@@ -901,20 +901,228 @@
         margin-bottom: 16px;
     }
 
-    .feature-card h3 {
-        font-size: 1.25rem;
-        margin-bottom: 12px;
+    /* =========================
+   HEADER / NAVIGATION
+========================= */
+
+    /* Sticky header */
+    /* =========================
+   HEADER LOGO DESIGN
+========================= */
+
+    /* Logo */
+    .top-header .logo {
+        font-size: 28px;
+        /* slightly larger for better visibility */
+        font-weight: 800;
+        /* bolder for emphasis */
+        color: #ff5733;
+        /* primary accent */
+        text-decoration: none;
+        /* remove underline */
+        cursor: pointer;
+        font-family: 'Poppins', sans-serif;
+        /* clean modern font */
+        letter-spacing: 1px;
+        /* spacing between letters */
+        text-transform: uppercase;
+        /* optional, makes it stand out */
+        transition: color 0.3s ease, transform 0.3s ease;
     }
 
-    .feature-card p {
-        font-size: 0.95rem;
-        color: #555;
-        margin-bottom: 16px;
+    /* Hover effect on logo */
+    .top-header .logo:hover {
+        color: #ff7f50;
+        /* slightly lighter accent on hover */
+        transform: scale(1.05);
+        /* subtle grow effect */
     }
 
-    .feature-card .btn-sm {
-        padding: 8px 16px;
-        border-radius: 8px;
+    /* ==============================
+   HEADER / NAVIGATION
+============================== */
+
+    /* Sticky top header */
+    .top-header {
+        width: 100%;
+        position: sticky;
+        top: 0;
+        left: 0;
+        z-index: 999;
+        background: #ffffff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 50px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+    }
+
+    /* Logo */
+    .top-header .logo {
+        font-family: "Poppins", sans-serif;
+        font-size: 28px;
+        font-weight: 800;
+        color: #ff5733;
+        /* Primary accent color */
+        text-decoration: none;
+        cursor: pointer;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    /* Navigation links */
+    .nh-nav {
+        display: flex;
+        gap: 30px;
+    }
+
+    .nh-nav a {
+        text-decoration: none;
+        font-size: 17px;
+        font-weight: 600;
+        color: #333;
+        transition: color 0.3s ease, transform 0.2s ease;
+    }
+
+    .nh-nav a:hover {
+        color: #ff5733;
+        transform: translateY(-2px);
+    }
+
+    /* Hamburger menu icon for mobile */
+    .hamburger {
+        display: none;
+        font-size: 28px;
+        cursor: pointer;
+        color: #333;
+        transition: color 0.3s ease;
+    }
+
+    .hamburger:hover {
+        color: #ff5733;
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+
+        /* Hide nav by default on mobile */
+        .nh-nav {
+            display: none;
+            position: absolute;
+            top: 70px;
+            right: 0;
+            flex-direction: column;
+            align-items: center;
+            background: #ffffff;
+            width: 100%;
+            gap: 20px;
+            padding: 20px 0;
+            border-top: 1px solid #eee;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+        }
+
+        .nh-nav.active {
+            display: flex;
+        }
+
+        .hamburger {
+            display: block;
+        }
+    }
+
+    /* Optional smooth animation for menu toggle */
+    .nh-nav,
+    .hamburger {
+        transition: all 0.3s ease;
+    }
+
+    /* ==============================
+   OPTIONAL HEADER STYLING
+============================== */
+
+    /* Add subtle hover underline for nav links */
+    .nh-nav a::after {
+        content: "";
+        display: block;
+        width: 0%;
+        height: 2px;
+        background: #ff5733;
+        transition: width 0.3s;
+        margin-top: 4px;
+    }
+
+    .nh-nav a:hover::after {
+        width: 100%;
+    }
+
+    /* Mobile logo adjustment */
+    @media (max-width: 480px) {
+        .top-header {
+            padding: 14px 20px;
+        }
+
+        .top-header .logo {
+            font-size: 22px;
+        }
+
+        .nh-nav a {
+            font-size: 16px;
+        }
+    }
+
+    /* -------- FOOTER -------- */
+    .site-footer {
+        background: #0a0a0a;
+        /* Dark clean background */
+        color: #ffffff;
+        /* White text */
+        padding: 40px 20px;
+        text-align: center;
+        margin-top: 50px;
+        border-top: 2px solid #1f1f1f;
+        font-size: 15px;
+    }
+
+    /* Footer text */
+    .site-footer p {
+        margin: 0;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+    }
+
+    /* Legal Links */
+    .footer-legal {
+        margin-top: 15px;
+    }
+
+    .footer-legal a {
+        display: inline-block;
+        margin: 8px 14px;
+        color: #63a5ff;
+        /* Soft blue */
+        font-weight: 600;
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        transition: 0.3s ease;
+    }
+
+    .footer-legal a:hover {
+        color: #ffffff;
+        border-bottom: 1px solid #ffffff;
+    }
+
+    /* -------- MOBILE RESPONSIVE -------- */
+    @media (max-width: 600px) {
+        .footer-legal {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-legal a {
+            font-size: 14px;
+        }
     }
 
 
@@ -1152,29 +1360,102 @@
     }
 
     /* FIX TRAINER CARD SIZE — MOBILE ONLY */
-    .team-card {
-        width: 100% !important;
-        min-height: 260px !important;
-        /* you can increase/decrease */
+    /* =========================
+   TRAINERS SECTION MOBILE
+=========================== */
+    .nh-trainers {
+        padding: 30px 0;
+        background: #f9f9f9;
+    }
+
+    .nh-trainers .section-title {
+        font-size: 24px;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 30px;
+        color: #111;
+    }
+
+    /* SLICK SLIDER CARDS */
+    .trainers-slider {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        padding: 16px;
+        justify-content: center;
     }
 
-    .team-card img {
-        width: 90px !important;
-        height: 90px !important;
+    .trainer-card {
+        background: #ffffff;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        padding: 15px;
+        margin: 0 8px;
+        width: 80%;
+        /* Mobile width */
+        max-width: 320px;
+        transition: transform 0.3s;
+    }
+
+    .trainer-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .trainer-card img {
+        width: 100%;
+        height: 220px;
         object-fit: cover;
+        border-radius: 16px;
+        margin-bottom: 12px;
     }
 
-    .team-card h3 {
-        font-size: 1rem;
+    .trainer-card h4 {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 5px;
+        color: #222;
+    }
+
+    .trainer-card .muted {
+        font-size: 14px;
+        color: #777;
+    }
+
+    /* SLICK DOTS FIX */
+    .trainers-slider .slick-dots {
+        bottom: -20px;
         text-align: center;
     }
 
-    .team-card p {
-        text-align: center;
-        font-size: 0.9rem;
+    .slick-dots li button:before {
+        font-size: 10px;
+        color: #bbb;
+        opacity: 1;
+    }
+
+    .slick-dots li.slick-active button:before {
+        color: #222;
+    }
+
+    /* MOBILE RESPONSIVE */
+    @media (max-width: 480px) {
+        .trainer-card {
+            width: 90%;
+            padding: 12px;
+        }
+
+        .trainer-card img {
+            height: 200px;
+        }
+
+        .trainer-card h4 {
+            font-size: 17px;
+        }
+
+        .trainer-card .muted {
+            font-size: 13px;
+        }
+
+        .trainers-slider .slick-dots {
+            bottom: -18px;
+        }
     }
