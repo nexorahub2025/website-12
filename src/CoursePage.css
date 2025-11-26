@@ -1441,29 +1441,5 @@
    TRAINER SECTION – MOBILE FIX
 -----------------------------*/
 /* Mobile Responsive Trainer Cards */
-@media (max-width: 768px) {
-  .trainers-container {
-    display: flex;
-    flex-direction: column;   /* stack vertically */
-    align-items: center;      /* center align */
-    gap: 20px;                /* space between cards */
-    width: 100%;
-  }
+    @media (max-width: 768px) {
 
-  .trainer-card {
-    width: 90%;                /* full width look, with margin */
-    max-width: 350px;          /* prevent too wide */
-    margin: 0 auto;
-  }
-
-  .trainer-card img {
-    width: 100%;
-    height: auto;
-    border-radius: 12px;
-  }
-
-  .trainer-name,
-  .trainer-role {
-    text-align: center;
-  }
-}
