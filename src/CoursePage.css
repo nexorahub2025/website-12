@@ -1437,9 +1437,32 @@
     }
 
     /* MOBILE RESPONSIVE */
-  /* ----------------------------
-   TRAINER SECTION – MOBILE FIX
------------------------------*/
-/* Mobile Responsive Trainer Cards */
     @media (max-width: 768px) {
+        .trainers-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            /* space between steps */
+            margin: 20px auto;
+            width: 100%;
+        }
 
+        .trainer-card {
+            position: relative;
+            width: 90%;
+            max-width: 350px;
+            text-align: center;
+        }
+
+        /* Add step arrows */
+        .trainer-card:not(:last-child)::after {
+            content: "↓";
+            font-size: 28px;
+            color: #1e73ff;
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
