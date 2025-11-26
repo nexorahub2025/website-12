@@ -63,16 +63,42 @@ export default function PythonFullStack() {
     ];
 
     const reviews = [
-        { name: "Priya ", text: "Practical, mentor-led sessions — helped me get my first job." },
+        { name: "Priya", text: "Practical, mentor-led sessions — helped me get my first job." },
         { name: "Rahul Verma", text: "Best project-driven course. Highly recommended." },
-        { name: "Sneha ", text: "Clear explanations and great support from trainers." },
+        { name: "Sneha", text: "Clear explanations and great support from trainers." },
     ];
 
     const toggle = (i) => setOpenIndex(openIndex === i ? null : i);
 
+    const toggleMenu = () => {
+        document.querySelector(".nh-nav").classList.toggle("active");
+    };
+
     return (
-        <div id="bro" className="pf-container">
-            {/* Hero */}
+        <div id="python-page" className="pf-container">
+
+            {/* ================= NAVBAR (Updated Brand) ================= */}
+            <header className="top-header">
+                <div className="brand">
+                    <div className="logo">P</div>
+                    <div className="brand-text">
+                        <div className="brand-name">PythonFullStack</div>
+                        <div className="brand-tag">Learn. Build. Master.</div>
+                    </div>
+                </div>
+
+                <nav className="nh-nav">
+                    <a href="/" >Home</a>
+                    <a href="#syllabus" onClick={(e) => { e.preventDefault(); document.querySelector("#syllabus").scrollIntoView({ behavior: "smooth" }); }}>Syllabus</a>
+                    <a href="#projects" onClick={(e) => { e.preventDefault(); document.querySelector("#projects").scrollIntoView({ behavior: "smooth" }); }}>Projects</a>
+                    <a href="#reviews" onClick={(e) => { e.preventDefault(); document.querySelector("#reviews").scrollIntoView({ behavior: "smooth" }); }}>Reviews</a>
+                    <a href="#contact" onClick={(e) => { e.preventDefault(); document.querySelector("#contact").scrollIntoView({ behavior: "smooth" }); }}>Contact</a>
+                </nav>
+
+                <div className="hamburger" onClick={toggleMenu}>☰</div>
+            </header>
+
+            {/* ================= HERO SECTION ================= */}
             <section id="pythontop" className="pf-hero">
                 <div className="pf-hero-inner">
                     <div className="pf-hero-left">
@@ -81,39 +107,27 @@ export default function PythonFullStack() {
                             Become an industry-ready Full Stack developer — learn Python, Django/Flask,
                             React, Databases & Deployment with real projects and mentor support.
                         </p>
+
                         <div className="pf-cta-row">
-                            <a
-                                href="https://forms.gle/peNrEn4xtz7Qx1bN6"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="btn-primary full"
-                            >
-                                Enroll Now
-                            </a>
-                            <a href="#syllabus" className="btn-outline">View Syllabus</a>
+                            <a href="https://forms.gle/peNrEn4xtz7Qx1bN6" target="_blank" rel="noopener noreferrer" className="btn-primary full">Enroll Now</a>
+                            <a href="#syllabus" className="btn-outline" onClick={(e) => { e.preventDefault(); document.querySelector("#syllabus").scrollIntoView({ behavior: "smooth" }); }}>View Syllabus</a>
                             <a className="btn-tertiary" href="#contact">Contact Us</a>
                         </div>
 
                         <div className="pf-highlights">
                             <div><strong>Duration:</strong> 10–12 weeks</div>
                             <div><strong>Level:</strong> Beginner → Advanced</div>
-                            <div><strong>Students:</strong> 500+ Enrolled</div>
+                            <div><strong>Students:</strong> 2+ Enrolled</div>
                         </div>
                     </div>
 
                     <aside className="pf-aside">
                         <div className="pf-card sticky-card">
-                            <div className="price">₹7,999</div>
+                            <div className="price">₹5,999</div>
                             <div className="small">One-time payment (or EMI available)</div>
-                            <a
-                                href="https://forms.gle/peNrEn4xtz7Qx1bN6"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="btn-primary full"
-                            >
-                                Enroll Now
-                            </a>
+                            <a href="https://forms.gle/peNrEn4xtz7Qx1bN6" target="_blank" rel="noopener noreferrer" className="btn-primary full">Enroll Now</a>
                             <button className="btn-outline full">Download Syllabus</button>
+
                             <ul className="aside-features">
                                 <li>Live classes</li>
                                 <li>Hands-on Projects</li>
@@ -125,7 +139,7 @@ export default function PythonFullStack() {
                 </div>
             </section>
 
-            {/* What you'll learn */}
+            {/* ================= WHAT YOU LEARN ================= */}
             <section className="pf-section learn" id="learn">
                 <h2>What you'll learn</h2>
                 <div className="learn-grid">
@@ -138,10 +152,9 @@ export default function PythonFullStack() {
                 </div>
             </section>
 
-            {/* Syllabus (accordion) */}
+            {/* ================= SYLLABUS ================= */}
             <section className="pf-section" id="syllabus">
                 <h2>Detailed Curriculum</h2>
-
                 <div className="accordion-wrap">
                     {syllabus.map((m, i) => (
                         <div key={i} className={`accordion ${openIndex === i ? "open" : ""}`}>
@@ -152,7 +165,6 @@ export default function PythonFullStack() {
                                 </div>
                                 <div className="accordion-icon">{openIndex === i ? "−" : "+"}</div>
                             </button>
-
                             <div className="accordion-body">
                                 <ul>
                                     {m.items.map((topic, t) => <li key={t}>{topic}</li>)}
@@ -163,8 +175,8 @@ export default function PythonFullStack() {
                 </div>
             </section>
 
-            {/* Projects */}
-            <section className="pf-section projects">
+            {/* ================= PROJECTS ================= */}
+            <section className="pf-section projects" id="projects">
                 <h2>Real Projects You'll Build</h2>
                 <div className="projects-grid">
                     {projects.map((p, idx) => (
@@ -176,28 +188,22 @@ export default function PythonFullStack() {
                 </div>
             </section>
 
-            {/* Team / Instructor */}
+            {/* ================= TRAINER ================= */}
             <section className="pf-section instructor">
                 <h2>Meet Your Trainers</h2>
-
                 <div className="team-grid">
                     <div className="team-card">
                         <div className="trainer-img-wrapper">
                             <img src="/image/3.jpg" alt="Sowmika" className="trainer-img" />
                         </div>
-
                         <h3>Sowmika</h3>
-                        <p>
-                            Senior Full Stack Trainer — 6+ years experience building production apps
-                            & mentoring 1000+ students.
-                        </p>
+                        <p>Senior Full Stack Trainer — 6+ years experience building production apps & mentoring 1000+ students.</p>
                     </div>
                 </div>
             </section>
 
-
-            {/* Reviews */}
-            <section className="pf-section reviews">
+            {/* ================= REVIEWS ================= */}
+            <section className="pf-section reviews" id="reviews">
                 <h2>Student Reviews</h2>
                 <div className="reviews-row">
                     {reviews.map((r, i) => (
@@ -209,18 +215,23 @@ export default function PythonFullStack() {
                 </div>
             </section>
 
-            {/* Contact */}
+            {/* ================= CONTACT ================= */}
             <section className="pf-section contact" id="contact">
                 <h2>Contact / Enroll</h2>
                 <p>Have questions? Call or WhatsApp us — we're here to help!</p>
                 <div className="contact-row">
-                    <a href="mailto:nexorahub2025@gmail.com" className="btn-outline">Email Us</a>
+                    <a href="mailto:pythonfullstack@example.com" className="btn-outline">Email Us</a>
                     <a href="tel:+91 7286842779" className="btn-primary">Call / WhatsApp</a>
                 </div>
             </section>
+            <footer className="site-footer">
+                <p>© 2025 Skill Tree Academy / NexoraHub</p>
 
-            <footer className="pf-footer">
-                © {new Date().getFullYear()} NexoraHub — All rights reserved.
+                <div className="footer-legal">
+                    <a href="/public/privacy.pdf" target="_blank">Privacy Policy</a>
+                    <a href="/public/Terms.pdf" target="_blank">Terms & Conditions</a>
+                    <a href="/public/refund.pdf" target="_blank">Refund Policy</a>
+                </div>
             </footer>
         </div>
     );
