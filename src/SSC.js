@@ -3,6 +3,7 @@ import "./CoursePage.css";
 
 export default function SSCExam() {
     const [openIndex, setOpenIndex] = useState(null);
+    const [menuOpen, setMenuOpen] = useState(false);
 
     const syllabus = [
         {
@@ -48,22 +49,10 @@ export default function SSCExam() {
     ];
 
     const projects = [
-        {
-            name: "Daily Speed Test Practice",
-            desc: "Short chapter-wise tests to improve accuracy & speed.",
-        },
-        {
-            name: "Weekly Mock Tests",
-            desc: "Full-length SSC mock tests with ranks and analysis.",
-        },
-        {
-            name: "PYQ Analysis Sessions",
-            desc: "10-year SSC CGL, CHSL question paper solving.",
-        },
-        {
-            name: "Study Planner",
-            desc: "Personalized timetable based on performance.",
-        },
+        { name: "Daily Speed Test Practice", desc: "Short chapter-wise tests to improve accuracy & speed." },
+        { name: "Weekly Mock Tests", desc: "Full-length SSC mock tests with ranks and analysis." },
+        { name: "PYQ Analysis Sessions", desc: "10-year SSC CGL, CHSL question paper solving." },
+        { name: "Study Planner", desc: "Personalized timetable based on performance." },
     ];
 
     const reviews = [
@@ -73,10 +62,32 @@ export default function SSCExam() {
     ];
 
     const toggle = (i) => setOpenIndex(openIndex === i ? null : i);
+    const toggleMenu = () => setMenuOpen(!menuOpen);
 
     return (
         <div className="pf-container">
-            {/* Hero */}
+            {/* ================= NAVBAR ================= */}
+            <header className="top-header">
+                <div className="brand">
+                    <div className="logo">S</div>
+                    <div className="brand-text">
+                        <div className="brand-name">SSC Exam</div>
+                        <div className="brand-tag">Learn. Practice. Succeed.</div>
+                    </div>
+                </div>
+
+                <div className="hamburger" onClick={toggleMenu}>☰</div>
+
+                <nav className={`nh-nav ${menuOpen ? "active" : ""}`}>
+                    <a href="/">Home</a>
+                    <a href="#syllabus">Syllabus</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#reviews">Reviews</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </header>
+
+            {/* ================= HERO ================= */}
             <section className="pf-hero">
                 <div className="pf-hero-inner">
                     <div className="pf-hero-left">
@@ -87,15 +98,7 @@ export default function SSCExam() {
                         </p>
 
                         <div className="pf-cta-row">
-                            <a
-                                className="btn-primary full"
-                                href="https://forms.gle/cJbB8jEknh4DHbsT8"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                style={{ textDecoration: "none" }}
-                            >
-                                Enroll Now
-                            </a>
+                            <a className="btn-primary full" href="https://forms.gle/cJbB8jEknh4DHbsT8" target="_blank" rel="noopener noreferrer">Enroll Now</a>
                             <a href="#syllabus" className="btn-outline">View Syllabus</a>
                             <a className="btn-tertiary" href="#contact">Contact Us</a>
                         </div>
@@ -111,15 +114,7 @@ export default function SSCExam() {
                         <div className="pf-card sticky-card">
                             <div className="price">₹7,999</div>
                             <div className="small">One-time payment (EMI available)</div>
-                            <a
-                                className="btn-primary full"
-                                href="https://forms.gle/cJbB8jEknh4DHbsT8"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                style={{ textDecoration: "none" }}
-                            >
-                                Enroll Now
-                            </a>
+                            <a className="btn-primary full" href="https://forms.gle/cJbB8jEknh4DHbsT8" target="_blank" rel="noopener noreferrer">Enroll Now</a>
                             <button className="btn-outline full">Download Syllabus</button>
                             <ul className="aside-features">
                                 <li>Live Classes</li>
@@ -132,7 +127,7 @@ export default function SSCExam() {
                 </div>
             </section>
 
-            {/* What you'll learn */}
+            {/* ================= WHAT YOU LEARN ================= */}
             <section className="pf-section learn" id="learn">
                 <h2>What you'll learn</h2>
                 <div className="learn-grid">
@@ -145,10 +140,9 @@ export default function SSCExam() {
                 </div>
             </section>
 
-            {/* Syllabus */}
+            {/* ================= SYLLABUS ================= */}
             <section className="pf-section" id="syllabus">
                 <h2>Detailed Curriculum</h2>
-
                 <div className="accordion-wrap">
                     {syllabus.map((m, i) => (
                         <div key={i} className={`accordion ${openIndex === i ? "open" : ""}`}>
@@ -159,7 +153,6 @@ export default function SSCExam() {
                                 </div>
                                 <div className="accordion-icon">{openIndex === i ? "−" : "+"}</div>
                             </button>
-
                             <div className="accordion-body">
                                 <ul>
                                     {m.items.map((topic, t) => <li key={t}>{topic}</li>)}
@@ -170,8 +163,8 @@ export default function SSCExam() {
                 </div>
             </section>
 
-            {/* Projects */}
-            <section className="pf-section projects">
+            {/* ================= PROJECTS ================= */}
+            <section className="pf-section projects" id="projects">
                 <h2>Practice & Mock Tests</h2>
                 <div className="projects-grid">
                     {projects.map((p, idx) => (
@@ -183,11 +176,8 @@ export default function SSCExam() {
                 </div>
             </section>
 
-            {/* Trainers */}
-
-
-            {/* Reviews */}
-            <section className="pf-section reviews">
+            {/* ================= REVIEWS ================= */}
+            <section className="pf-section reviews" id="reviews">
                 <h2>Student Reviews</h2>
                 <div className="reviews-row">
                     {reviews.map((r, i) => (
@@ -199,7 +189,7 @@ export default function SSCExam() {
                 </div>
             </section>
 
-            {/* Contact */}
+            {/* ================= CONTACT ================= */}
             <section className="pf-section contact" id="contact">
                 <h2>Contact / Enroll</h2>
                 <p>Have questions? Call or WhatsApp us — SSC mentors will guide you.</p>
@@ -208,9 +198,14 @@ export default function SSCExam() {
                     <a href="tel:+919876543210" className="btn-primary">Call / WhatsApp</a>
                 </div>
             </section>
+            <footer className="site-footer">
+                <p>© 2025 Skill Tree Academy / NexoraHub</p>
 
-            <footer className="pf-footer">
-                © {new Date().getFullYear()} NexoraHub — All rights reserved.
+                <div className="footer-legal">
+                    <a href="/public/privacy.pdf" target="_blank">Privacy Policy</a>
+                    <a href="/public/Terms.pdf" target="_blank">Terms & Conditions</a>
+                    <a href="/public/refund.pdf" target="_blank">Refund Policy</a>
+                </div>
             </footer>
         </div>
     );
