@@ -3,6 +3,7 @@ import "./CoursePage.css";
 
 export default function AICourse() {
     const [openIndex, setOpenIndex] = useState(null);
+    const [menuOpen, setMenuOpen] = useState(false);
 
     const syllabus = [
         {
@@ -47,22 +48,10 @@ export default function AICourse() {
     ];
 
     const projects = [
-        {
-            name: "AI Chatbot using LLMs",
-            desc: "Build your own ChatGPT-style chatbot using APIs or fine-tuned LLMs.",
-        },
-        {
-            name: "Movie Recommendation System",
-            desc: "Collaborative filtering, ML models, deployment with UI.",
-        },
-        {
-            name: "Image Classification System",
-            desc: "Deep learning model trained using CNNs for object detection.",
-        },
-        {
-            name: "Customer Churn Prediction",
-            desc: "Machine learning pipeline with real-world datasets and dashboards.",
-        },
+        { name: "AI Chatbot using LLMs", desc: "Build your own ChatGPT-style chatbot using APIs or fine-tuned LLMs." },
+        { name: "Movie Recommendation System", desc: "Collaborative filtering, ML models, deployment with UI." },
+        { name: "Image Classification System", desc: "Deep learning model trained using CNNs for object detection." },
+        { name: "Customer Churn Prediction", desc: "Machine learning pipeline with real-world datasets and dashboards." },
     ];
 
     const reviews = [
@@ -75,7 +64,35 @@ export default function AICourse() {
 
     return (
         <div className="pf-container">
-            {/* Hero */}
+
+            {/* ---------------------------------- */}
+            {/* 🔥 HEADER ADDED - SAME AS HOME PAGE */}
+            {/* ---------------------------------- */}
+            <header className="top-header">
+                <div className="brand">
+                    <div className="logo">AI</div>
+                    <div className="brand-text">
+                        <div className="brand-name">NexoraHub</div>
+                        <div className="brand-tag">Learn. Grow. Excel.</div>
+                    </div>
+                </div>
+
+                <nav className={`nh-nav ${menuOpen ? "active" : ""}`}>
+                    <a href="/">Home</a>
+                    <a href="/#courses">Courses</a>
+                    <a href="/#about">About</a>
+                    <a href="/#contact">Contact</a>
+                </nav>
+
+                <div
+                    className="hamburger"
+                    onClick={() => setMenuOpen(!menuOpen)}
+                >
+                    ☰
+                </div>
+            </header>
+
+            {/* HERO SECTION */}
             <section className="pf-hero">
                 <div className="pf-hero-inner">
                     <div className="pf-hero-left">
@@ -84,7 +101,6 @@ export default function AICourse() {
                             Learn Python, Machine Learning, Deep Learning, Neural Networks, Generative AI
                             and build real-world AI applications from scratch.
                         </p>
-
                         <div className="pf-cta-row">
                             <a
                                 href="https://forms.gle/peNrEn4xtz7Qx1bN6"
@@ -95,19 +111,20 @@ export default function AICourse() {
                                 Enroll Now
                             </a>
                             <a href="#syllabus" className="btn-outline">View Syllabus</a>
-                            <a className="btn-tertiary" href="#contact">Contact Us</a>
+                            <a href="#contact" className="btn-tertiary">Contact Us</a>
                         </div>
 
                         <div className="pf-highlights">
                             <div><strong>Duration:</strong> 12–14 weeks</div>
                             <div><strong>Level:</strong> Beginner → Advanced</div>
-                            <div><strong>Students:</strong> 1200+ Enrolled</div>
+                            <div><strong>Students:</strong> 2+ Enrolled</div>
                         </div>
                     </div>
 
+                    {/* ASIDE CARD */}
                     <aside className="pf-aside">
                         <div className="pf-card sticky-card">
-                            <div className="price">₹9,999</div>
+                            <div className="price">₹8,999</div>
                             <div className="small">One-time payment (EMI available)</div>
                             <a
                                 href="https://forms.gle/peNrEn4xtz7Qx1bN6"
@@ -129,8 +146,8 @@ export default function AICourse() {
                 </div>
             </section>
 
-            {/* What you'll learn */}
-            <section className="pf-section learn" id="learn">
+            {/* WHAT YOU WILL LEARN */}
+            <section className="pf-section learn">
                 <h2>What you'll learn</h2>
                 <div className="learn-grid">
                     <div className="learn-item">Machine Learning Algorithms</div>
@@ -142,24 +159,24 @@ export default function AICourse() {
                 </div>
             </section>
 
-            {/* Syllabus */}
+            {/* SYLLABUS */}
             <section className="pf-section" id="syllabus">
                 <h2>Detailed Curriculum</h2>
-
                 <div className="accordion-wrap">
-                    {syllabus.map((m, i) => (
+                    {syllabus.map((module, i) => (
                         <div key={i} className={`accordion ${openIndex === i ? "open" : ""}`}>
                             <button className="accordion-head" onClick={() => toggle(i)}>
                                 <div>
-                                    <h3>{m.title}</h3>
-                                    <div className="muted">{m.duration}</div>
+                                    <h3>{module.title}</h3>
+                                    <div className="muted">{module.duration}</div>
                                 </div>
                                 <div className="accordion-icon">{openIndex === i ? "−" : "+"}</div>
                             </button>
-
-                            <div className="accordion-body">
+                            <div className={`accordion-body ${openIndex === i ? "show" : ""}`}>
                                 <ul>
-                                    {m.items.map((topic, t) => <li key={t}>{topic}</li>)}
+                                    {module.items.map((item, idx) => (
+                                        <li key={idx}>{item}</li>
+                                    ))}
                                 </ul>
                             </div>
                         </div>
@@ -167,7 +184,7 @@ export default function AICourse() {
                 </div>
             </section>
 
-            {/* Projects */}
+            {/* PROJECTS */}
             <section className="pf-section projects">
                 <h2>Real Projects You'll Build</h2>
                 <div className="projects-grid">
@@ -180,10 +197,7 @@ export default function AICourse() {
                 </div>
             </section>
 
-            {/* Instructors */}
-
-
-            {/* Reviews */}
+            {/* REVIEWS */}
             <section className="pf-section reviews">
                 <h2>Student Reviews</h2>
                 <div className="reviews-row">
@@ -196,19 +210,25 @@ export default function AICourse() {
                 </div>
             </section>
 
-            {/* Contact */}
+            {/* CONTACT */}
             <section className="pf-section contact" id="contact">
                 <h2>Contact / Enroll</h2>
                 <p>Have questions? Call or WhatsApp us — we're here to help!</p>
                 <div className="contact-row">
                     <a href="mailto:nexorahub2025@gmail.com" className="btn-outline">Email Us</a>
-                    <a href="tel:+91 7286842779" className="btn-primary">Call / WhatsApp</a>
+                    <a href="tel:+917286842779" className="btn-primary">Call / WhatsApp</a>
                 </div>
             </section>
 
-            <footer className="pf-footer">
-                © {new Date().getFullYear()} NexoraHub — All rights reserved.
+            <footer className="site-footer">
+                <p>© 2025 Skill Tree Academy / NexoraHub</p>
+
+                <div className="footer-legal">
+                    <a href="/public/privacy.pdf" target="_blank">Privacy Policy</a>
+                    <a href="/public/Terms.pdf" target="_blank">Terms & Conditions</a>
+                    <a href="/public/refund.pdf" target="_blank">Refund Policy</a>
+                </div>
             </footer>
-        </div >
+        </div>
     );
 }
