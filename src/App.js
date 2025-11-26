@@ -291,7 +291,7 @@ function Home() {
                           className="btn-sm"
                           onClick={() => window.scrollTo(0, 0)}
                         >
-                          Syllabus
+                          Explore
                         </Link>
                         <Link
                           to="https://forms.gle/peNrEn4xtz7Qx1bN6"
@@ -515,22 +515,22 @@ function Home() {
         </section>
         <div className="stats-section">
           <div className="stat-box">
-            <h2>1200+</h2>
+            <h2>20+</h2>
             <p>Students Enrolled</p>
           </div>
 
           <div className="stat-box">
-            <h2>350+</h2>
+            <h2>5+</h2>
             <p>Students Placed</p>
           </div>
 
           <div className="stat-box">
-            <h2>18+</h2>
+            <h2>16+</h2>
             <p>Courses Offered</p>
           </div>
 
           <div className="stat-box">
-            <h2>4.9★</h2>
+            <h2>4.0★</h2>
             <p>Google Rating</p>
           </div>
         </div>
@@ -571,7 +571,7 @@ function Home() {
           <div className="nh-container contact-inner">
             <div className="contact-card-large">
               <h3>Get in touch</h3>
-              <p>Address: Kovvur Road, Sita Nagar, Jaggampeta, Kakinada 533002</p>
+              <p>Address: Kovvur Road, Sita Nagar, Jaggannadapuram, Kakinada 533002</p>
               <p>Email: support@nexorahub2025@gmail.com | Phone: +91 7286842779</p>
             </div>
 
@@ -587,14 +587,13 @@ function Home() {
           </div>
         </section>
       </main>
+      <footer className="site-footer">
+        <p>© 2025 Skill Tree Academy / NexoraHub</p>
 
-      <footer className="nh-footer">
-        <div className="nh-container footer-inner">
-          <div>© {new Date().getFullYear()} NexoraHub — All rights reserved.</div>
-          <div className="footer-links">
-            <a href="#privacy">Privacy</a>
-            <a href="#terms">Terms</a>
-          </div>
+        <div className="footer-legal">
+          <a href="/public/privacy.pdf" target="_blank">Privacy Policy</a>
+          <a href="/public/Terms.pdf" target="_blank">Terms & Conditions</a>
+          <a href="/public/refund.pdf" target="_blank">Refund Policy</a>
         </div>
       </footer>
     </>
