@@ -3,6 +3,7 @@ import "./CoursePage.css";
 
 export default function NEETCourse() {
     const [openIndex, setOpenIndex] = useState(null);
+    const [menuOpen, setMenuOpen] = useState(false);
 
     const syllabus = [
         {
@@ -85,17 +86,39 @@ export default function NEETCourse() {
     ];
 
     const toggle = (i) => setOpenIndex(openIndex === i ? null : i);
+    const toggleMenu = () => setMenuOpen(!menuOpen);
 
     return (
         <div className="pf-container">
-            {/* Hero */}
+            {/* ================= NAVBAR ================= */}
+            <header className="top-header">
+                <div className="brand">
+                    <div className="logo">N</div>
+                    <div className="brand-text">
+                        <div className="brand-name">NEET Course</div>
+                        <div className="brand-tag">Learn. Revise. Excel.</div>
+                    </div>
+                </div>
+
+                <div className="hamburger" onClick={toggleMenu}>☰</div>
+
+                <nav className={`nh-nav ${menuOpen ? "active" : ""}`}>
+                    <a href="/">Home</a>
+                    <a href="#syllabus">Syllabus</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#reviews">Reviews</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </header>
+
+            {/* ================= HERO ================= */}
             <section className="pf-hero">
                 <div className="pf-hero-inner">
                     <div className="pf-hero-left">
                         <h1>NEET Preparation — 6 Month Intensive Program</h1>
                         <p className="pf-sub">
                             Focused 6-month NEET program covering Physics, Chemistry & Biology with PYQ practice,
-                            full-length mocks and personalized improvement plan — designed for targetted rank improvement.
+                            full-length mocks and personalized improvement plan.
                         </p>
 
                         <div className="pf-cta-row">
@@ -112,9 +135,9 @@ export default function NEETCourse() {
                         </div>
 
                         <div className="pf-highlights">
-                            <div><strong>Duration:</strong> 6 months (intensive)</div>
-                            <div><strong>Mode:</strong> Live classes + Recorded sessions</div>
-                            <div><strong>Students:</strong> Batch size limited for focused attention</div>
+                            <div><strong>Duration:</strong> 6 months</div>
+                            <div><strong>Mode:</strong> Live + Recorded</div>
+                            <div><strong>Students:</strong> Limited batch size</div>
                         </div>
                     </div>
 
@@ -142,23 +165,22 @@ export default function NEETCourse() {
                 </div>
             </section>
 
-            {/* What you'll learn */}
+            {/* ================= WHAT YOU LEARN ================= */}
             <section className="pf-section learn" id="learn">
                 <h2>What you'll learn</h2>
                 <div className="learn-grid">
-                    <div className="learn-item">NEET-focused Physics Concepts & Problem Solving</div>
-                    <div className="learn-item">Physical, Inorganic & Organic Chemistry Mastery</div>
-                    <div className="learn-item">Complete Biology (Botany + Zoology) with Diagrams</div>
+                    <div className="learn-item">Physics Concepts & Problem Solving</div>
+                    <div className="learn-item">Chemistry Mastery (Physical, Organic, Inorganic)</div>
+                    <div className="learn-item">Biology (Botany + Zoology) with Diagrams</div>
                     <div className="learn-item">Exam Strategy, Time Management & PYQ Analysis</div>
-                    <div className="learn-item">High-yield Revision & Quick Recall Techniques</div>
-                    <div className="learn-item">Performance Tracking & Personalized Improvement Plan</div>
+                    <div className="learn-item">High-yield Revision & Quick Recall</div>
+                    <div className="learn-item">Performance Tracking & Personalized Improvement</div>
                 </div>
             </section>
 
-            {/* Syllabus */}
+            {/* ================= SYLLABUS ================= */}
             <section className="pf-section" id="syllabus">
                 <h2>Detailed Curriculum</h2>
-
                 <div className="accordion-wrap">
                     {syllabus.map((m, i) => (
                         <div key={i} className={`accordion ${openIndex === i ? "open" : ""}`}>
@@ -169,7 +191,6 @@ export default function NEETCourse() {
                                 </div>
                                 <div className="accordion-icon">{openIndex === i ? "−" : "+"}</div>
                             </button>
-
                             <div className="accordion-body">
                                 <ul>
                                     {m.items.map((topic, t) => <li key={t}>{topic}</li>)}
@@ -180,8 +201,8 @@ export default function NEETCourse() {
                 </div>
             </section>
 
-            {/* Projects / Practice */}
-            <section className="pf-section projects">
+            {/* ================= PROJECTS ================= */}
+            <section className="pf-section projects" id="projects">
                 <h2>Practice & Mock Tests</h2>
                 <div className="projects-grid">
                     {projects.map((p, idx) => (
@@ -193,10 +214,8 @@ export default function NEETCourse() {
                 </div>
             </section>
 
-            {/* Trainers / Faculty */}
-
-            {/* Reviews */}
-            <section className="pf-section reviews">
+            {/* ================= REVIEWS ================= */}
+            <section className="pf-section reviews" id="reviews">
                 <h2>Student Reviews</h2>
                 <div className="reviews-row">
                     {reviews.map((r, i) => (
@@ -208,7 +227,7 @@ export default function NEETCourse() {
                 </div>
             </section>
 
-            {/* Contact */}
+            {/* ================= CONTACT ================= */}
             <section className="pf-section contact" id="contact">
                 <h2>Contact / Enroll</h2>
                 <p>Have questions? Call or WhatsApp us — we're here to help!</p>
@@ -218,8 +237,14 @@ export default function NEETCourse() {
                 </div>
             </section>
 
-            <footer className="pf-footer">
-                © {new Date().getFullYear()} NexoraHub — All rights reserved.
+            <footer className="site-footer">
+                <p>© 2025 Skill Tree Academy / NexoraHub</p>
+
+                <div className="footer-legal">
+                    <a href="/public/privacy.pdf" target="_blank">Privacy Policy</a>
+                    <a href="/public/Terms.pdf" target="_blank">Terms & Conditions</a>
+                    <a href="/public/refund.pdf" target="_blank">Refund Policy</a>
+                </div>
             </footer>
         </div>
     );
