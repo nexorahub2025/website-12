@@ -3,77 +3,41 @@ import "./CoursePage.css";
 
 export default function TCSNQT() {
     const [openIndex, setOpenIndex] = useState(null);
+    const [menuOpen, setMenuOpen] = useState(false);
 
     const syllabus = [
         {
             title: "Module 1 — Numerical Ability",
             duration: "3 weeks",
-            items: [
-                "Number System, LCM & HCF",
-                "Percentages, Profit & Loss, Simple & Compound Interest",
-                "Time & Work, Time & Distance",
-                "Permutation & Combination, Probability",
-            ],
+            items: ["Number System, LCM & HCF", "Percentages, Profit & Loss, Simple & Compound Interest", "Time & Work, Time & Distance", "Permutation & Combination, Probability"],
         },
         {
             title: "Module 2 — Verbal Ability",
             duration: "3 weeks",
-            items: [
-                "Reading Comprehension",
-                "Sentence Completion & Para Jumbles",
-                "Error Spotting & Grammar Rules",
-                "Vocabulary Building",
-            ],
+            items: ["Reading Comprehension", "Sentence Completion & Para Jumbles", "Error Spotting & Grammar Rules", "Vocabulary Building"],
         },
         {
             title: "Module 3 — Reasoning Ability",
             duration: "3 weeks",
-            items: [
-                "Puzzles & Seating Arrangement",
-                "Coding–Decoding",
-                "Blood Relations",
-                "Series & Patterns",
-                "Data Interpretation & Analysis",
-            ],
+            items: ["Puzzles & Seating Arrangement", "Coding–Decoding", "Blood Relations", "Series & Patterns", "Data Interpretation & Analysis"],
         },
         {
             title: "Module 4 — Programming Logic",
             duration: "4 weeks",
-            items: [
-                "Basic Coding Concepts",
-                "Loops, Arrays, Strings",
-                "Functions & Recursion",
-                "Debugging & Error Finding",
-            ],
+            items: ["Basic Coding Concepts", "Loops, Arrays, Strings", "Functions & Recursion", "Debugging & Error Finding"],
         },
         {
             title: "Module 5 — Hands-on Coding (Python/Java/C)",
             duration: "3 weeks",
-            items: [
-                "Coding Questions asked in TCS NQT",
-                "Optimization and test case handling",
-                "Mock Coding Rounds",
-            ],
+            items: ["Coding Questions asked in TCS NQT", "Optimization and test case handling", "Mock Coding Rounds"],
         },
     ];
 
     const projects = [
-        {
-            name: "Aptitude Question Bank Generator",
-            desc: "Build a tool to generate topic-wise TCS NQT level aptitude questions.",
-        },
-        {
-            name: "Mock Test Simulator",
-            desc: "Create a full mock TCS NQT exam platform with timer & scoring logic.",
-        },
-        {
-            name: "Mini Coding Problems",
-            desc: "Solve 50+ coding problems commonly asked in TCS hiring tests.",
-        },
-        {
-            name: "Resume Portfolio Project",
-            desc: "Build a clean portfolio for TCS recruitment profile.",
-        },
+        { name: "Aptitude Question Bank Generator", desc: "Build a tool to generate topic-wise TCS NQT level aptitude questions." },
+        { name: "Mock Test Simulator", desc: "Create a full mock TCS NQT exam platform with timer & scoring logic." },
+        { name: "Mini Coding Problems", desc: "Solve 50+ coding problems commonly asked in TCS hiring tests." },
+        { name: "Resume Portfolio Project", desc: "Build a clean portfolio for TCS recruitment profile." },
     ];
 
     const reviews = [
@@ -83,11 +47,32 @@ export default function TCSNQT() {
     ];
 
     const toggle = (i) => setOpenIndex(openIndex === i ? null : i);
+    const toggleMenu = () => setMenuOpen(!menuOpen);
 
     return (
         <div className="pf-container">
+            {/* ================= NAVBAR ================= */}
+            <header className="top-header">
+                <div className="brand">
+                    <div className="logo">T</div>
+                    <div className="brand-text">
+                        <div className="brand-name">TCS NQT</div>
+                        <div className="brand-tag">Learn. Practice. Succeed.</div>
+                    </div>
+                </div>
 
-            {/* Hero Section */}
+                <div className="hamburger" onClick={toggleMenu}>☰</div>
+
+                <nav className={`nh-nav ${menuOpen ? "active" : ""}`}>
+                    <a href="/">Home</a>
+                    <a href="#syllabus">Syllabus</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#reviews">Reviews</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </header>
+
+            {/* ================= HERO ================= */}
             <section className="pf-hero">
                 <div className="pf-hero-inner">
                     <div className="pf-hero-left">
@@ -97,14 +82,7 @@ export default function TCSNQT() {
                         </p>
 
                         <div className="pf-cta-row">
-                            <a
-                                href="https://forms.gle/peNrEn4xtz7Qx1bN6"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="btn-primary full"
-                            >
-                                Enroll Now
-                            </a>
+                            <a href="https://forms.gle/peNrEn4xtz7Qx1bN6" target="_blank" rel="noopener noreferrer" className="btn-primary full">Enroll Now</a>
                             <a href="#syllabus" className="btn-outline">View Syllabus</a>
                             <a className="btn-tertiary" href="#contact">Contact Us</a>
                         </div>
@@ -120,14 +98,7 @@ export default function TCSNQT() {
                         <div className="pf-card sticky-card">
                             <div className="price">₹4,999</div>
                             <div className="small">One-time payment (EMI also available)</div>
-                            <a
-                                href="https://forms.gle/peNrEn4xtz7Qx1bN6"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="btn-primary full"
-                            >
-                                Enroll Now
-                            </a>
+                            <a href="https://forms.gle/peNrEn4xtz7Qx1bN6" target="_blank" rel="noopener noreferrer" className="btn-primary full">Enroll Now</a>
                             <button className="btn-outline full">Download Syllabus</button>
                             <ul className="aside-features">
                                 <li>Live Classes</li>
@@ -140,7 +111,7 @@ export default function TCSNQT() {
                 </div>
             </section>
 
-            {/* What You'll Learn */}
+            {/* ================= WHAT YOU LEARN ================= */}
             <section className="pf-section learn" id="learn">
                 <h2>What you'll learn</h2>
                 <div className="learn-grid">
@@ -153,10 +124,9 @@ export default function TCSNQT() {
                 </div>
             </section>
 
-            {/* Syllabus */}
+            {/* ================= SYLLABUS ================= */}
             <section className="pf-section" id="syllabus">
                 <h2>Detailed Curriculum</h2>
-
                 <div className="accordion-wrap">
                     {syllabus.map((m, i) => (
                         <div key={i} className={`accordion ${openIndex === i ? "open" : ""}`}>
@@ -167,7 +137,6 @@ export default function TCSNQT() {
                                 </div>
                                 <div className="accordion-icon">{openIndex === i ? "−" : "+"}</div>
                             </button>
-
                             <div className="accordion-body">
                                 <ul>
                                     {m.items.map((topic, t) => <li key={t}>{topic}</li>)}
@@ -178,8 +147,8 @@ export default function TCSNQT() {
                 </div>
             </section>
 
-            {/* Projects */}
-            <section className="pf-section projects">
+            {/* ================= PROJECTS ================= */}
+            <section className="pf-section projects" id="projects">
                 <h2>Practice & Projects</h2>
                 <div className="projects-grid">
                     {projects.map((p, idx) => (
@@ -191,10 +160,8 @@ export default function TCSNQT() {
                 </div>
             </section>
 
-            {/* Instructors */}
-
-            {/* Reviews */}
-            <section className="pf-section reviews">
+            {/* ================= REVIEWS ================= */}
+            <section className="pf-section reviews" id="reviews">
                 <h2>Student Reviews</h2>
                 <div className="reviews-row">
                     {reviews.map((r, i) => (
@@ -206,7 +173,7 @@ export default function TCSNQT() {
                 </div>
             </section>
 
-            {/* Contact Section */}
+            {/* ================= CONTACT ================= */}
             <section className="pf-section contact" id="contact">
                 <h2>Contact / Enroll</h2>
                 <p>Have questions? Call or WhatsApp us — we're here to help!</p>
@@ -216,8 +183,14 @@ export default function TCSNQT() {
                 </div>
             </section>
 
-            <footer className="pf-footer">
-                © {new Date().get(Date.now())} NexoraHub — All rights reserved.
+            <footer className="site-footer">
+                <p>© 2025 Skill Tree Academy / NexoraHub</p>
+
+                <div className="footer-legal">
+                    <a href="/public/privacy.pdf" target="_blank">Privacy Policy</a>
+                    <a href="/public/Terms.pdf" target="_blank">Terms & Conditions</a>
+                    <a href="/public/refund.pdf" target="_blank">Refund Policy</a>
+                </div>
             </footer>
         </div>
     );
