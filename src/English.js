@@ -3,6 +3,7 @@ import "./CoursePage.css";
 
 export default function EnglishCommunication() {
     const [openIndex, setOpenIndex] = useState(null);
+    const [menuOpen, setMenuOpen] = useState(false);
 
     const syllabus = [
         {
@@ -70,10 +71,31 @@ export default function EnglishCommunication() {
     ];
 
     const toggle = (i) => setOpenIndex(openIndex === i ? null : i);
+    const toggleMenu = () => setMenuOpen(!menuOpen);
 
     return (
         <div className="pf-container">
-            {/* Hero */}
+            {/* ================= NAVBAR ================= */}
+            <header className="top-header">
+                <div className="brand">
+                    <div className="logo">E</div>
+                    <div className="brand-text">
+                        <div className="brand-name">English Communication</div>
+                        <div className="brand-tag">Speak, Write & Communicate Confidently</div>
+                    </div>
+                </div>
+
+                <div className="hamburger" onClick={toggleMenu}>☰</div>
+
+                <nav className={`nh-nav ${menuOpen ? "active" : ""}`}>
+                    <a href="/">Home</a>
+                    <a href="#syllabus">Syllabus</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </header>
+
+            {/* ================= HERO ================= */}
             <section className="pf-hero">
                 <div className="pf-hero-inner">
                     <div className="pf-hero-left">
@@ -98,13 +120,13 @@ export default function EnglishCommunication() {
                         <div className="pf-highlights">
                             <div><strong>Duration:</strong> 6–8 weeks</div>
                             <div><strong>Level:</strong> Beginner → Advanced</div>
-                            <div><strong>Students:</strong> 1200+ Enrolled</div>
+                            <div><strong>Students:</strong> 2+ Enrolled</div>
                         </div>
                     </div>
 
                     <aside className="pf-aside">
                         <div className="pf-card sticky-card">
-                            <div className="price">₹4,999</div>
+                            <div className="price">₹1,999</div>
                             <div className="small">One-time payment</div>
                             <a
                                 href="https://forms.gle/peNrEn4xtz7Qx1bN6"
@@ -126,23 +148,9 @@ export default function EnglishCommunication() {
                 </div>
             </section>
 
-            {/* Learn */}
-            <section className="pf-section learn" id="learn">
-                <h2>What you'll learn</h2>
-                <div className="learn-grid">
-                    <div className="learn-item">Speak confidently in English</div>
-                    <div className="learn-item">Improve grammar & vocabulary</div>
-                    <div className="learn-item">Write professional emails</div>
-                    <div className="learn-item">Prepare for interviews</div>
-                    <div className="learn-item">Improve pronunciation & fluency</div>
-                    <div className="learn-item">Develop public speaking skills</div>
-                </div>
-            </section>
-
-            {/* Syllabus */}
+            {/* ================= SYLLABUS ================= */}
             <section className="pf-section" id="syllabus">
                 <h2>Detailed Curriculum</h2>
-
                 <div className="accordion-wrap">
                     {syllabus.map((m, i) => (
                         <div key={i} className={`accordion ${openIndex === i ? "open" : ""}`}>
@@ -153,7 +161,6 @@ export default function EnglishCommunication() {
                                 </div>
                                 <div className="accordion-icon">{openIndex === i ? "−" : "+"}</div>
                             </button>
-
                             <div className="accordion-body">
                                 <ul>
                                     {m.items.map((topic, t) => <li key={t}>{topic}</li>)}
@@ -164,8 +171,8 @@ export default function EnglishCommunication() {
                 </div>
             </section>
 
-            {/* Projects */}
-            <section className="pf-section projects">
+            {/* ================= PROJECTS ================= */}
+            <section className="pf-section projects" id="projects">
                 <h2>Practical Projects You'll Do</h2>
                 <div className="projects-grid">
                     {projects.map((p, idx) => (
@@ -177,7 +184,7 @@ export default function EnglishCommunication() {
                 </div>
             </section>
 
-            {/* Reviews */}
+            {/* ================= REVIEWS ================= */}
             <section className="pf-section reviews">
                 <h2>Student Reviews</h2>
                 <div className="reviews-row">
@@ -190,7 +197,7 @@ export default function EnglishCommunication() {
                 </div>
             </section>
 
-            {/* Contact */}
+            {/* ================= CONTACT ================= */}
             <section className="pf-section contact" id="contact">
                 <h2>Contact / Enroll</h2>
                 <p>Have questions? Call or WhatsApp us — we're here to help!</p>
@@ -200,8 +207,14 @@ export default function EnglishCommunication() {
                 </div>
             </section>
 
-            <footer className="pf-footer">
-                © {new Date().getFullYear()} NexoraHub — All rights reserved.
+            <footer className="site-footer">
+                <p>© 2025 Skill Tree Academy / NexoraHub</p>
+
+                <div className="footer-legal">
+                    <a href="/public/privacy.pdf" target="_blank">Privacy Policy</a>
+                    <a href="/public/Terms.pdf" target="_blank">Terms & Conditions</a>
+                    <a href="/public/refund.pdf" target="_blank">Refund Policy</a>
+                </div>
             </footer>
         </div>
     );
