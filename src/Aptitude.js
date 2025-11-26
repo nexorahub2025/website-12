@@ -3,6 +3,7 @@ import "./CoursePage.css";
 
 export default function AptitudeReasoning() {
     const [openIndex, setOpenIndex] = useState(null);
+    const [menuOpen, setMenuOpen] = useState(false);
 
     const syllabus = [
         {
@@ -50,22 +51,10 @@ export default function AptitudeReasoning() {
     ];
 
     const projects = [
-        {
-            name: "Aptitude Mega Practice Set (300+ Questions)",
-            desc: "Full coverage of Quant, Reasoning & Data Interpretation.",
-        },
-        {
-            name: "Banking & SSC Reasoning Booster",
-            desc: "High-level puzzles, seating, coding-decoding sets.",
-        },
-        {
-            name: "TCS NQT & GATE Aptitude Pack",
-            desc: "Previous year and expected question practice.",
-        },
-        {
-            name: "Daily Mock Test Series",
-            desc: "Timed quizzes with leaderboard and progress tracking.",
-        },
+        { name: "Aptitude Mega Practice Set (300+ Questions)", desc: "Full coverage of Quant, Reasoning & Data Interpretation." },
+        { name: "Banking & SSC Reasoning Booster", desc: "High-level puzzles, seating, coding-decoding sets." },
+        { name: "TCS NQT & GATE Aptitude Pack", desc: "Previous year and expected question practice." },
+        { name: "Daily Mock Test Series", desc: "Timed quizzes with leaderboard and progress tracking." },
     ];
 
     const reviews = [
@@ -75,10 +64,33 @@ export default function AptitudeReasoning() {
     ];
 
     const toggle = (i) => setOpenIndex(openIndex === i ? null : i);
+    const toggleMenu = () => setMenuOpen(!menuOpen);
 
     return (
         <div className="pf-container">
-            {/* Hero */}
+
+            {/* ================= HEADER (Same as Python Full Stack) ================= */}
+            <header className="top-header">
+                <div className="brand">
+                    <div className="logo">A</div>
+                    <div className="brand-text">
+                        <div className="brand-name">Aptitude & Reasoning</div>
+                        <div className="brand-tag">Master Every Concept</div>
+                    </div>
+                </div>
+
+                <div className="hamburger" onClick={toggleMenu}>☰</div>
+
+                <nav className={`nh-nav ${menuOpen ? "active" : ""}`}>
+                    <a href="/">Home</a>
+                    <a href="/#about">About</a>
+                    <a href="/#courses">Courses</a>
+                    <a href="/#bootcamp">Bootcamp</a>
+                    <a href="/#contact">Contact Us</a>
+                </nav>
+            </header>
+
+            {/* ================= HERO ================= */}
             <section className="pf-hero">
                 <div className="pf-hero-inner">
                     <div className="pf-hero-left">
@@ -89,35 +101,26 @@ export default function AptitudeReasoning() {
                         </p>
 
                         <div className="pf-cta-row">
-                            <a
-                                href="https://forms.gle/peNrEn4xtz7Qx1bN6"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="btn-primary full"
-                            >
+                            <a href="https://forms.gle/peNrEn4xtz7Qx1bN6" target="_blank" rel="noopener noreferrer" className="btn-primary full">
                                 Enroll Now
                             </a>
                             <a href="#syllabus" className="btn-outline">View Syllabus</a>
-                            <a className="btn-tertiary" href="#contact">Contact Us</a>
+                            <a href="#contact" className="btn-tertiary">Contact Us</a>
                         </div>
 
                         <div className="pf-highlights">
                             <div><strong>Duration:</strong> 10–12 weeks</div>
                             <div><strong>Level:</strong> Beginner → Advanced</div>
-                            <div><strong>Students:</strong> 1500+ Enrolled</div>
+                            <div><strong>Students:</strong> 2+ Enrolled</div>
                         </div>
                     </div>
 
+                    {/* Price Card */}
                     <aside className="pf-aside">
                         <div className="pf-card sticky-card">
-                            <div className="price">₹4,999</div>
+                            <div className="price">₹2,999</div>
                             <div className="small">One-time payment (EMI available)</div>
-                            <a
-                                href="https://forms.gle/peNrEn4xtz7Qx1bN6"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="btn-primary full"
-                            >
+                            <a href="https://forms.gle/peNrEn4xtz7Qx1bN6" target="_blank" rel="noopener noreferrer" className="btn-primary full">
                                 Enroll Now
                             </a>
                             <button className="btn-outline full">Download Syllabus</button>
@@ -132,7 +135,7 @@ export default function AptitudeReasoning() {
                 </div>
             </section>
 
-            {/* What you'll learn */}
+            {/* What You'll Learn */}
             <section className="pf-section learn" id="learn">
                 <h2>What you'll learn</h2>
                 <div className="learn-grid">
@@ -140,7 +143,7 @@ export default function AptitudeReasoning() {
                     <div className="learn-item">Logical & Analytical Reasoning</div>
                     <div className="learn-item">Verbal & Non-Verbal Reasoning</div>
                     <div className="learn-item">Data Interpretation Mastery</div>
-                    <div className="learn-item">Shortcut Tricks & Time Saving Methods</div>
+                    <div className="learn-item">Shortcut Tricks & Time-Saving Methods</div>
                     <div className="learn-item">Preparation for SSC, Banking, TCS, RRB, GATE</div>
                 </div>
             </section>
@@ -148,7 +151,6 @@ export default function AptitudeReasoning() {
             {/* Syllabus */}
             <section className="pf-section" id="syllabus">
                 <h2>Detailed Curriculum</h2>
-
                 <div className="accordion-wrap">
                     {syllabus.map((m, i) => (
                         <div key={i} className={`accordion ${openIndex === i ? "open" : ""}`}>
@@ -159,7 +161,6 @@ export default function AptitudeReasoning() {
                                 </div>
                                 <div className="accordion-icon">{openIndex === i ? "−" : "+"}</div>
                             </button>
-
                             <div className="accordion-body">
                                 <ul>
                                     {m.items.map((topic, t) => <li key={t}>{topic}</li>)}
@@ -182,9 +183,6 @@ export default function AptitudeReasoning() {
                     ))}
                 </div>
             </section>
-
-            {/* Instructors */}
-
 
             {/* Reviews */}
             <section className="pf-section reviews">
@@ -209,9 +207,16 @@ export default function AptitudeReasoning() {
                 </div>
             </section>
 
-            <footer className="pf-footer">
-                © {new Date().getFullYear()} NexoraHub — All rights reserved.
+            <footer className="site-footer">
+                <p>© 2025 Skill Tree Academy / NexoraHub</p>
+
+                <div className="footer-legal">
+                    <a href="/public/privacy.pdf" target="_blank">Privacy Policy</a>
+                    <a href="/public/Terms.pdf" target="_blank">Terms & Conditions</a>
+                    <a href="/public/refund.pdf" target="_blank">Refund Policy</a>
+                </div>
             </footer>
+
         </div>
     );
 }
