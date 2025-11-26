@@ -1440,73 +1440,30 @@
   /* ----------------------------
    TRAINER SECTION – MOBILE FIX
 -----------------------------*/
-@media (max-width: 480px) {
-
-  .trainer-section {
-    padding: 25px 10px;
-    text-align: center;
-  }
-
-  .trainer-title {
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 15px;
-  }
-
-  /* Slider wrapper */
-  .trainers-slider {
+/* Mobile Responsive Trainer Cards */
+@media (max-width: 768px) {
+  .trainers-container {
     display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 18px;
-    padding: 10px 0;
+    flex-direction: column;   /* stack vertically */
+    align-items: center;      /* center align */
+    gap: 20px;                /* space between cards */
+    width: 100%;
   }
 
-  .trainers-slider::-webkit-scrollbar {
-    display: none;
-  }
-
-  /* Individual Trainer Card */
   .trainer-card {
-    min-width: 88%;
-    max-width: 88%;
-    background: #ffffff;
-    border-radius: 18px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-    padding: 15px;
-    scroll-snap-align: center;
-    text-align: center;
+    width: 90%;                /* full width look, with margin */
+    max-width: 350px;          /* prevent too wide */
     margin: 0 auto;
   }
 
   .trainer-card img {
     width: 100%;
-    height: 230px;
-    object-fit: cover;
-    border-radius: 14px;
+    height: auto;
+    border-radius: 12px;
   }
 
-  .trainer-card h4 {
-    margin-top: 12px;
-    font-size: 18px;
-    font-weight: 700;
-  }
-
-  .trainer-card .muted {
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 8px;
-  }
-
-  .trainer-card p {
-    font-size: 13px;
-    line-height: 1.4;
-    padding: 0 6px;
-  }
-
-  /* Dots (if slick enabled) */
-  .trainers-slider .slick-dots {
-    bottom: -10px !important;
+  .trainer-name,
+  .trainer-role {
+    text-align: center;
   }
 }
-
