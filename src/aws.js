@@ -121,7 +121,7 @@ export default function AWS() {
 
                     <aside className="pf-aside">
                         <div className="pf-card sticky-card">
-                            <div className="price">₹5,499</div>
+                            <div className="price">₹4,499</div>
                             <div className="small">One-time payment (EMI available)</div>
                             <a href="https://forms.gle/peNrEn4xtz7Qx1bN6" target="_blank" rel="noopener noreferrer" className="btn-primary full">Enroll Now</a>
                             <button className="btn-outline full">Download Syllabus</button>
