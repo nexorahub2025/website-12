@@ -109,7 +109,7 @@ export default function JavaFullStack() {
 
                     <aside className="pf-aside">
                         <div className="pf-card sticky-card">
-                            <div className="price">₹5,999</div>
+                            <div className="price">₹4,999</div>
                             <div className="small">One-time payment (EMI also available)</div>
                             <a href="https://forms.gle/peNrEn4xtz7Qx1bN6" target="_blank" rel="noopener noreferrer" className="btn-primary full">Enroll Now</a>
                             <button className="btn-outline full">Download Syllabus</button>
